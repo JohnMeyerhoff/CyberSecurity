@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths: 
     - 'bericht/**'
+    - 'vortrag/**'
     - '.github/workflows/SE.yml'
 
   workflow_dispatch:
