@@ -1,2 +1,11 @@
 
 .DS_Store
+vortrag/main.aux
+vortrag/main.fdb_latexmk
+vortrag/main.fls
+vortrag/main.log
+vortrag/main.nav
+vortrag/main.out
+vortrag/main.snm
+vortrag/main.synctex.gz
+vortrag/main.toc
