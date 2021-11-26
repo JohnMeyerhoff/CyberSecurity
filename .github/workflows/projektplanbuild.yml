@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
     paths: 
-    - 'vortrag/**'
+    - 'projektplan/**'
     - '.github/workflows/presentationbuild.yml'
 
 jobs:
@@ -15,12 +15,12 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: vortrag/main.tex
-          root_folder: vortrag
+          root_file: projektplan/main.tex
+          root_folder: projektplan
       - name: Change filename
-        run: cp vortrag/main.pdf bufferoverflow.pdf
+        run: cp projektplan/main.pdf projektplan.pdf
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: 'BufferOverflow'
-          path: 'bufferoverflow.pdf'
+          name: 'Projektplan'
+          path: 'projektplan.pdf'
