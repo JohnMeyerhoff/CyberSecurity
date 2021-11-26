@@ -15,8 +15,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: vortrag/main.tex
-          root_folder: vortrag
+          root_file: main.tex
+          working_directory: vortrag
       - name: Change filename
         run: cp vortrag/main.pdf bufferoverflow.pdf
       - name: Upload artifact

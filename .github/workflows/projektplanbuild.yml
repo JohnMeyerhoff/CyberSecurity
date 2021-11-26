@@ -15,8 +15,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: projektplan/main.tex
-          root_folder: projektplan
+          root_file: main.tex
+          working_directory: projektplan
       - name: Change filename
         run: cp projektplan/main.pdf projektplan.pdf
       - name: Upload artifact
