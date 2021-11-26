@@ -1,4 +1,4 @@
-name: Build presentation with LaTeX
+name: Build Projektplan with LaTeX Beamer
 on: 
   push:
     branches: [ master ]
