@@ -10,13 +10,13 @@ Low Level:
         \item Hardware-basierte Lösungen
         \item Betriebssystembasierte Ansätze
     \end{itemize}
-Laufzeitlösungen:
+Passive Härtung der Programme:
     \begin{itemize}
         \item C Range Error Detector und Out Of Bounds Object
         \item Safe Pointer Instrumentalisierung
         \item Manuelles Buffer-Overflow Blocken (Input-Bereinigung)
     \end{itemize}
-Vorbereitete Lösungen:
+Aktive (Analysierende) Lösungen:
     \begin{itemize}
         \item Statische Code-Analyse
         \item Stack-Schutz mit ``Canary'' (Zufallszahl)
@@ -37,6 +37,10 @@ Adresse welche nicht im spezifizierten Bereich liegt auf ein bestimmtes Objekt, 
 etwas falsch gelaufen ist. Diese Methode ist nicht gängig, da sie technisch gesehen
 umgangen werden kann, solange der Angreifer weiß, welcher Speicherbereich für das Programm
 vorgesehen ist.
+
+
+% OS_Based kann schwer zwischen exploit und Intent unterscheiden
+% HW_Based gleiches problem
 
 \subsection{Code-Beispiel}
     \begin{center}
