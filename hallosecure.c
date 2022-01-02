@@ -1,31 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void check(char *buf){
-    for(char c = *buf++; c != '\x00'; c = *buf++) {
-        if(c=='A') {
-            printf("Hacker blockiert!\n");
-            exit(-1);
-        }
-    }
+void iterate(char* name) {
+    for(char n = *name++; n != '\x00'; n = *name++);
 }
 
-void gruss()
-{
-    char buf[256] = {0};
+void gruss() {
+    char name[256] = {0};
     printf("\nWie ist dein Name?:\n");
-    gets(buf);
-    check(buf);
-    printf(buf);
+    gets(name);
+    iterate(name);
+    printf(name);
     printf(" ich gruesse dich!");
 }
 void grussSicher()
 {
-    char buf[256] = {0};
+    char name[256] = {0};
     printf("\nWie ist dein Name?:\n");
-    gets(buf);
-    check(buf);
-    printf(buf);
+    gets(name);
+    iterate(name);
+    printf(name);
     printf(" ich gruesse dich!");
 }
 
@@ -37,7 +31,7 @@ void grussJava()
     //b = name.copy();
     //System.Out.println(name);
 }
-int main(int argc, char* argv[]) {
+int main() {
     while(1) {
         gruss();
     }
