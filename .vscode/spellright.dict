@@ -18,3 +18,5 @@ durchiteriert
 Formatierungsparametern
 Segmentierungsfehler
 Shellcodes
+execveat
+syscall

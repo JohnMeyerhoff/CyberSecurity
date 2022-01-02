@@ -1,4 +1,5 @@
 \section{Shellcode}
+\subsection{Definition}
 Um den nächsten Teil besser zu verstehen, sollte vorher erklärt werden, was genau Shellcode ist, wofür er 
 benutzt wird und was der Zusammenhang zur Assembler Programmiersprache ist. Shellcode ist definiert als eine 
 Reihe von Anweisungen, die über einen Exploit injiziert und dann durch den Prozess ausgeführt werden.
@@ -16,11 +17,13 @@ Windows leider nicht möglich ist. Im folgenden Beispiel wird ein Shellcode-Beis
 Die Idee hinter dem Beispiel ist es, zu zeigen, wie man mit einem Buffer Overflow Zugriff bekommen kann und dann den
 vorbereiteten Shellcode injizieren kann, damit dieser privilegiert ausgeführt wird und somit Schaden am Ziel verursacht.
 
-\subsection{Code}
+\subsection{Beispiel}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{images/shellstorm.png}
     \caption{Shellcode}
 \end{figure}
-\subsection{Erläuterung}
 
+%TODO: Einfügen aus DC
+%Struktur:
+%Der syscall wird abgeschickt, vorher müssen einige Werte gesetzt werden um execveat aufzurufen
