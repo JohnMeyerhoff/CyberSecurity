@@ -145,10 +145,9 @@ von NOP (0x90) Anweisungen, in deren Mitte dann ungefähr mit dem RIP gezeigt wi
 Die NOPs fungieren dann als eine Art “Rutsche“ (Slide), an der entlang das Programm an den Anfang des
 Shellcodes geführt wird.
 
-\pagebreak 
-% GGF ENTFERNEN
-Im folgenden Beispiel-Exploit wählen wir die erste Variante und verwenden zusätzlich eine NOP Slide:
+\pagebreak
 
+Im folgenden Beispiel-Exploit wählen wir die erste Variante und verwenden zusätzlich eine NOP Slide:
 \begin{enumerate}
     \item Nach einem erfolgreichen Verbindungsaufbau senden wir dem Dienst eine Folge von Format-String-Parametern, um uns die Startadresse des Buffers zu berechnen: 
 \end{enumerate}
@@ -179,9 +178,9 @@ Im folgenden Beispiel-Exploit wählen wir die erste Variante und verwenden zusä
 \end{figure}
 
 Nach dem Ausführen des Exploits wird aus dem Prozess eine Shell geöffnet, mit der wir interagieren können.
-Unsere Berechtigungen entsprechen dabei denen des Prozesses:
-\begin{figure}[h]
+\begin{figure}[b!]
     \centering
     \includegraphics[width=0.9\textwidth,keepaspectratio]{images/root.png}
     \caption{Root Shell}
 \end{figure}
+Unsere Berechtigungen entsprechen dabei denen des Prozesses:

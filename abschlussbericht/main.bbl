@@ -16,5 +16,43 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{NISTSP}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=780dc3aa8af36f5bdebed64017afec44}{%
+           family={Wayne\bibnamedelimb A.\bibnamedelimi Jansen},
+           familyi={W\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Karen\bibnamedelima Scarfone},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+           suffix={Theodore\bibnamedelima Winograd},
+           suffixi={T\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {National Institute of Standards}%
+        {Technology}%
+      }
+      \strng{namehash}{780dc3aa8af36f5bdebed64017afec44}
+      \strng{fullhash}{780dc3aa8af36f5bdebed64017afec44}
+      \strng{bibnamehash}{780dc3aa8af36f5bdebed64017afec44}
+      \strng{authorbibnamehash}{780dc3aa8af36f5bdebed64017afec44}
+      \strng{authornamehash}{780dc3aa8af36f5bdebed64017afec44}
+      \strng{authorfullhash}{780dc3aa8af36f5bdebed64017afec44}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{NIST SP 800-28 Version 2}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-28ver2.pdf
+      \endverb
+      \verb{url}
+      \verb https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-28ver2.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

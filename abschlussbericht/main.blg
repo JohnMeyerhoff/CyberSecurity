@@ -1,9 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[113] biber-darwin:340> INFO - === Sun Jan  2, 2022, 15:56:57
-[134] Biber.pm:415> INFO - Reading 'main.bcf'
-[261] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
-[270] Utils.pm:395> WARN - The file 'main.bcf' does not contain any citations!
-[283] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[284] bbl.pm:757> INFO - Output to main.bbl
-[284] Biber.pm:128> INFO - WARNINGS: 1
+[114] biber-darwin:340> INFO - === Sun Jan  2, 2022, 16:25:51
+[136] Biber.pm:415> INFO - Reading 'main.bcf'
+[268] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
+[290] Biber.pm:4340> INFO - Processing section 0
+[305] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[307] bibtex.pm:1689> INFO - LaTeX decoding ...
+[312] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[362] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[362] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[362] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[362] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[369] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[370] bbl.pm:757> INFO - Output to main.bbl
