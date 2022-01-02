@@ -76,6 +76,23 @@ dieser Art sind die C Funktionen \codeline{gets()} und \codeline{strcopy()}:
 Da keine Kontrolle auf die Länge des Inputs durchgeführt wird, kann nicht sichergestellt werden,
 dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in andere Bereiche überläuft.
 
+\subsection{Format-String-Schwachstelle}
+Bei Format-String-Schwachstellen handelt es sich zwar nicht direkt um eine Art von Buffer Overflow,
+jedoch können diese oft in ähnlichen Kontexten aufkommen und ermöglichen es Angreifern, 
+Informationen über die Interna eines Programms zu gewinnen. 
+
+Problematisch ist hierbei die unvorsichtige Verwendung von Formatierungsfunktionen wie \codeline{fprint()}.
+Soll beispielsweise eine Zeichenkette ausgegeben werden, sollte korrekterweise ein Formatierungsparameter
+wie \codeline{\%s} verwendet werden: \codeline{printf(“\%s”, chars)}. Die Unterschlagung dieses Parameters 
+scheint zwar auf den ersten Blick dasselbe Ergebnis zu liefern: \codeline{printf(chars)}. Die zweite Variante ermöglicht
+es dem Angreifer jedoch, eigene Parameter einzusetzen, um Informationen auszulesen oder zu manipulieren:
+\begin{itemize}
+    \item \codeline{\%x} Liest Daten vom Stack
+    \item \codeline{\%s} Liest Strings aus dem Prozess
+    \item \codeline{\%n} Schreibt einen Integer in den Prozess
+    \item \codeline{\%p} Gibt Pointer auf void aus
+\end{itemize}
+
 \subsection{Verhalten bei Overflow}
 
 
