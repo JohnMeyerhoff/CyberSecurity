@@ -1,19 +1,19 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[113] biber-darwin:340> INFO - === Mon Jan  3, 2022, 00:18:46
+[113] biber-darwin:340> INFO - === Mon Jan  3, 2022, 00:41:23
 [134] Biber.pm:415> INFO - Reading 'main.bcf'
 [262] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
 [284] Biber.pm:4340> INFO - Processing section 0
-[299] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[301] bibtex.pm:1689> INFO - LaTeX decoding ...
-[309] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[351] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki1' is not an integer - this will probably not sort properly.
-[355] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki2' is not an integer - this will probably not sort properly.
-[359] Utils.pm:395> WARN - legacy month field 'November' in entry 'whatsapp1' is not an integer - this will probably not sort properly.
-[374] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[374] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[374] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[374] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[384] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[387] bbl.pm:757> INFO - Output to main.bbl
-[387] Biber.pm:128> INFO - WARNINGS: 3
+[300] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[302] bibtex.pm:1689> INFO - LaTeX decoding ...
+[333] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[377] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki1' is not an integer - this will probably not sort properly.
+[381] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki2' is not an integer - this will probably not sort properly.
+[385] Utils.pm:395> WARN - legacy month field 'November' in entry 'whatsapp1' is not an integer - this will probably not sort properly.
+[400] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[400] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[400] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[400] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[410] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[413] bbl.pm:757> INFO - Output to main.bbl
+[413] Biber.pm:128> INFO - WARNINGS: 3
