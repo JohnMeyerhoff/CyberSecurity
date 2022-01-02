@@ -1,4 +1,41 @@
-\section{Anwendungsfallbeispiel}
+\section{Praktische Analyse}
+
+
+\subsection{Programmierfehler}
+Grundsätzlich kann jede Software von Buffer Overflows betroffen sein, die in einer Programmiersprache geschrieben ist, 
+welche direkte Zugriffe auf die Speicherstrukturen des Systems ermöglicht. Beispiele hierfür wären: Assembler, C/C++ oder 
+Fortran. Prinzipiell nicht betroffen sind Programme, die in einer interpretierten Sprache wie Python oder Java geschrieben 
+sind. Bei diesen Sprachen wäre nur ein Overflow im Interpreter selber möglich, da dieser in der Regel auf einer der zuerst 
+genannten Sprachen basiert.
+
+Am problematischsten sind hierbei Funktionen, die es ermöglichen Nutzereingaben zu lesen und zu speichern,
+die jedoch nicht die Länge der eingegebenen Daten überprüfen können. Zwei der bekanntesten Vertreter für Funktionen
+dieser Art sind die C Funktionen \codeline{gets()} und \codeline{strcopy()}:
+\begin{itemize}
+    \item \codeline{gets(buffer)} Fragt nach Input und kopiert die Eingaben in den angegebenen Speicher
+    \item \codeline{strcopy(buffer, input)} Kopiert den Input (z.\,B. ein Kommandozeilenargument)\\ in den angegebenen Speicher
+\end{itemize}
+Da keine Kontrolle auf die Länge des Inputs durchgeführt wird, kann nicht sichergestellt werden,
+dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in andere Bereiche überläuft.
+
+\subsection{Format-String-Schwachstelle}
+Bei Format-String-Schwachstellen handelt es sich zwar nicht direkt um eine Art von Buffer Overflow,
+jedoch können diese oft in ähnlichen Kontexten aufkommen und ermöglichen es Angreifern, 
+Informationen über die Interna eines Programms zu gewinnen. 
+
+Problematisch ist hierbei die unvorsichtige Verwendung von Formatierungsfunktionen wie \codeline{fprint()}.
+Soll beispielsweise eine Zeichenkette ausgegeben werden, sollte korrekterweise ein Formatierungsparameter
+wie \codeline{\%s} verwendet werden: \codeline{printf(“\%s”, chars)}. Die Unterschlagung dieses Parameters 
+scheint zwar auf den ersten Blick dasselbe Ergebnis zu liefern: \codeline{printf(chars)}. Die zweite Variante ermöglicht
+es dem Angreifer jedoch, eigene Parameter einzusetzen, um Informationen auszulesen oder zu manipulieren:
+\begin{itemize}
+    \item \codeline{\%x} Liest Daten vom Stack
+    \item \codeline{\%s} Liest Strings aus dem Prozess
+    \item \codeline{\%n} Schreibt einen Integer in den Prozess
+    \item \codeline{\%p} Gibt Pointer auf void aus
+\end{itemize}
+
+
 \subsection{Code}
 \subsection{Setup des Servers}
 \subsection{Böswilliger Client}
