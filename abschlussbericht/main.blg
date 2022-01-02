@@ -1,15 +1,19 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[117] biber-darwin:340> INFO - === Sun Jan  2, 2022, 17:40:15
-[140] Biber.pm:415> INFO - Reading 'main.bcf'
-[270] Biber.pm:952> INFO - Found 1 citekeys in bib section 0
-[292] Biber.pm:4340> INFO - Processing section 0
-[307] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[309] bibtex.pm:1689> INFO - LaTeX decoding ...
-[314] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[364] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[364] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[364] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[364] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[371] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[373] bbl.pm:757> INFO - Output to main.bbl
+[122] biber-MSWIN64:340> INFO - === 
+[165] Biber.pm:415> INFO - Reading 'main.bcf'
+[300] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
+[316] Biber.pm:4340> INFO - Processing section 0
+[330] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[384] bibtex.pm:1689> INFO - LaTeX decoding ...
+[395] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[424] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki1' is not an integer - this will probably not sort properly.
+[427] Utils.pm:395> WARN - legacy month field 'November' in entry 'wiki2' is not an integer - this will probably not sort properly.
+[429] Utils.pm:395> WARN - legacy month field 'November' in entry 'whatsapp1' is not an integer - this will probably not sort properly.
+[443] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[444] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[444] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[444] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[453] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[454] bbl.pm:757> INFO - Output to main.bbl
+[455] Biber.pm:128> INFO - WARNINGS: 3

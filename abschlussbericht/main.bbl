@@ -52,6 +52,86 @@
       \verb https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-28ver2.pdf
       \endverb
     \endentry
+    \entry{wiki1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Morris (Computerwurm)}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
+      \endverb
+    \endentry
+    \entry{wiki2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{SQL Slammer}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/SQL_Slammer
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/SQL_Slammer
+      \endverb
+    \endentry
+    \entry{whatsapp1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0ac99bdfe2d9c3365dca0c0d43bc4b05}{%
+           family={MacTechNews},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{fullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{bibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authorbibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authornamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authorfullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Kritische Sicherheitslücke bei WhatsApp}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
+      \endverb
+      \verb{url}
+      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
