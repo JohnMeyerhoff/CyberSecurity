@@ -23,7 +23,7 @@ zunächst in den Arbeitsspeicher geladen. Im Speicher gliedert sich der Prozess 
 Wenn eine neue Funktion aufgerufen wird, legt diese zunächst ihre Funktionsparameter auf den Stack,
 gefolgt von einer Return-Adresse, die angibt, zu welcher Stelle im Programm im Anschluss an die
 Ausführung der Funktion gesprungen wird, und einem Base Pointer. Darauf folgen lokale Daten,
-die von der Funktion verwendet werden, wie z. B. ein Char Array.
+die von der Funktion verwendet werden, wie z.\,B. ein Char Array.
 \pagebreak
 \subsection{Stack Overflow}
 Der zuvor beschriebene Aufbau des Stacks lässt sich nun durch gezieltes Einfügen von Daten in eine Funktion ausnutzen.
@@ -46,6 +46,35 @@ Ausgeführter Shellcode läuft dann immer unter denselben Privilegien wie der Pr
     \caption{Buffer im Stack während eines Overflows}%
     \label{fig:example}%
 \end{figure}
+
+\subsection{Heap Overflow}
+Während der Laufzeit eines Programms allozierter Speicher (z.\,B. durch \codeline{malloc()}) wird im Heap angelegt. Dabei setzt sich 
+jeder Speicherblock aus einem Header und dem tatsächlich angeforderten Speicher zusammen. Der Header enthält hierbei, 
+je nach Implementation, Informationen über den Block, wie z.\,B. seine Größe. Aus diesen Informationen kann dann abgeleitet 
+werden, an welcher Stelle der nächste Block beginnt.
+
+Wenn ein Angreifer nun Manipulationen im Heap-Speicher vornehmen möchte, muss er die verwendete Implementation kennen 
+und kann in der Regel nur in Richtung der neu allozierten Speicherblöcke überschreiben. Da er aus dem Heap keine Möglichkeit 
+hat, Sprungadressen direkt zu manipulieren und den Programmfluss so umzuleiten, muss er versuchen, einen bestimmten 
+Speicherblock zu überschreiben, zu dem im weiteren Programmverlauf noch einmal gesprungen wird. Dies macht Heap Overflows 
+in der Praxis um einiges komplexer und schwieriger als Stack Overflows.
+
+\subsection{Programmierfehler}
+Grundsätzlich kann jede Software von Buffer Overflows betroffen sein, die in einer Programmiersprache geschrieben ist, 
+welche direkte Zugriffe auf die Speicherstrukturen des Systems ermöglicht. Beispiele hierfür wären: Assembler, C/C++ oder 
+Fortran. Prinzipiell nicht betroffen sind Programme, die in einer interpretierten Sprache wie Python oder Java geschrieben 
+sind. Bei diesen Sprachen wäre nur ein Overflow im Interpreter selber möglich, da dieser in der Regel auf einer der zuerst 
+genannten Sprachen basiert.
+
+Am problematischsten sind hierbei Funktionen, die es ermöglichen Nutzereingaben zu lesen und zu speichern,
+die jedoch nicht die Länge der eingegebenen Daten überprüfen können. Zwei der bekanntesten Vertreter für Funktionen
+dieser Art sind die C Funktionen \codeline{gets()} und \codeline{strcopy()}:
+\begin{itemize}
+    \item \codeline{gets(buffer)} Fragt nach Input und kopiert die Eingaben in den angegebenen Speicher
+    \item \codeline{strcopy(buffer, input)} Kopiert den Input (z.\,B. ein Kommandozeilenargument)\\ in den angegebenen Speicher
+\end{itemize}
+Da keine Kontrolle auf die Länge des Inputs durchgeführt wird, kann nicht sichergestellt werden,
+dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in andere Bereiche überläuft.
 
 \subsection{Verhalten bei Overflow}
 
