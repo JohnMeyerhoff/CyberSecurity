@@ -5,7 +5,7 @@ man nun verhindern möchte, dass ein Programm über diesen Angriff gestürzt wer
 kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombination
 zu blockieren. Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
 \subsection{Übersicht der Maßnahmen}
-Low Level:
+Low-Level:
     \begin{itemize}
         \item Hardware-basierte Lösungen
         \item Betriebssystembasierte Ansätze
@@ -22,12 +22,19 @@ Aktive (Analysierende) Lösungen:
         \item Stack-Schutz mit ``Canary'' (Zufallszahl)
     \end{itemize}
 
-\subsection{Canaries}
-Die Bezeichnung Canary (Engl. Kanarienvogel) stammt aus der Verwendung der Kanarienvögel als
-Indikator für Gas in Mienen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
-dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem Buffer-Overflow-Angriff
-überschrieben werden. Ein Tool wie StackGuard kann dann anhand der Änderung einen Fehler feststellen und
-die Ausführung des Programms abbrechen.
+
+\subsection{Low-Level Probleme}
+Sowohl Hardwarelösungen als auch Betriebssystembasierte Lösungen haben
+das grundlegende Problem, dass die Verhinderung von Buffer-Overflows zu
+ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
+jegliche Overflows zu verhindern - dabei werden jedoch auch vom
+Entwickler gewünschte Overflows verhindert, sodass Programme nicht mehr
+ordentlich funktionieren. Manchmal wird aus gründen der Effizienz ein
+Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
+ist. Leider ist es Praktisch nicht umsetzbar, in einer Hardwarelösung
+zu entscheiden, welcher Buffer-Overflow böswillig ist.
+
+
 
 \subsection{Out Of Bounds Object}
 Ein Out Of Bounds Object ist eine Vereinfachte Lösung um Referenzen ungefährlich zu machen.
@@ -38,9 +45,19 @@ etwas falsch gelaufen ist. Diese Methode ist nicht gängig, da sie technisch ges
 umgangen werden kann, solange der Angreifer weiß, welcher Speicherbereich für das Programm
 vorgesehen ist.
 
+\subsection{Statische Analyse}
+Wenn das Programm bereits vor der Ausführung analysiert wird, kann ein
+Tool bestimmen, an welchen stellen Schwachstellen vorhanden sind und
+ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
+Projekten die Aussage, dass keine Schwachstellen mehr vorhanden seien
+unmöglich zu treffen.
 
-% OS_Based kann schwer zwischen exploit und Intent unterscheiden
-% HW_Based gleiches problem
+\subsection{Canaries}
+Die Bezeichnung Canary (Engl. Kanarienvogel) stammt aus der Verwendung der Kanarienvögel als
+Indikator für Gas in Mienen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
+dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem Buffer-Overflow-Angriff
+überschrieben werden. Ein Tool wie StackGuard kann dann anhand der Änderung einen Fehler feststellen und
+die Ausführung des Programms abbrechen.
 
 \subsection{Code-Beispiel}
     \begin{center}
@@ -49,7 +66,17 @@ vorgesehen ist.
     \end{center}
 
 \subsection{Testen}
-    \begin{itemize}
-        \item Fuzzy Tests
-        \item Spezifische Payloads
-    \end{itemize}
+Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
+und Robustheit zu testen. Diese beiden Qualitätsmerkmale sind vor Allem
+im Bezug zu Buffer-Overflows am wichtigsten. Wartbarkeit und Erweiterbarkeit
+sind langfristig auch zu beachten, da es bei Änderungen am Quellcode
+zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
+Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
+werden.
+Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
+zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine 
+potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
+von einem sogenannten Fuzzer erstellt werden.
+Als Alternative zum Fuzzing gibt es Spezifische Payloads und
+Escape-Sequenzen welche - auch automatisiert - getestet werden können.
+
