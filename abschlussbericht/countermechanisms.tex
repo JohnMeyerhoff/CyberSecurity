@@ -59,6 +59,8 @@ dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem B
 überschrieben werden. Ein Tool wie StackGuard kann dann anhand der Änderung einen Fehler feststellen und
 die Ausführung des Programms abbrechen.
 
+%TODO: ASLR Beschreiben
+
 \subsection{Code-Beispiel}
     \begin{center}
         %TODO: Besseres Beispiel finden.
@@ -73,6 +75,7 @@ sind langfristig auch zu beachten, da es bei Änderungen am Quellcode
 zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
 Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
 werden.
+%Beispielkommentar
 Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
 zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine 
 potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
