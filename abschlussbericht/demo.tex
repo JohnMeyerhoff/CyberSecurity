@@ -101,6 +101,7 @@ Aus den Beobachtungen lässt sich schließen, dass die Adresse immer auf das End
     \caption{Speicherinhalt}
     \label{fig:spinhalt}
 \end{figure}
+
 (Die roten Klammern in \autoref{fig:spinhalt} markieren den Anfang und das Ende der Eingabe)
 
 Um die Adresse des Instruction Pointers herauszufinden, generieren wir uns eine möglichst zufällige,
@@ -163,15 +164,24 @@ Im folgenden Beispiel-Exploit wählen wir die erste Variante und verwenden zusä
 \end{enumerate}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth,height=0.75\textheight,keepaspectratio]{images/rip.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{images/rip.png}
     \caption{RIP}
 \end{figure}
+
 \begin{enumerate}
     \setcounter{enumi}{1}
     \item Die finale Payload setzt sich dann aus Padding, RIP, NOP Slide und Shellcode zusammen:
 \end{enumerate}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth,height=0.75\textheight,keepaspectratio]{images/payload.png}
+    \includegraphics[width=0.8\textwidth,keepaspectratio]{images/payload.png}
     \caption{Payload}
+\end{figure}
+
+Nach dem Ausführen des Exploits wird aus dem Prozess eine Shell geöffnet, mit der wir interagieren können.
+Unsere Berechtigungen entsprechen dabei denen des Prozesses:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{images/root.png}
+    \caption{Root Shell}
 \end{figure}
