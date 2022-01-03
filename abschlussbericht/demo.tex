@@ -2,10 +2,10 @@
 
 
 \subsection{Programmierfehler}
-Grundsätzlich kann jede Software von Buffer Overflows betroffen sein, die in einer Programmiersprache geschrieben ist, 
-welche direkte Zugriffe auf die Speicherstrukturen des Systems ermöglicht. Beispiele hierfür wären: Assembler, C/C++ oder 
-Fortran. Prinzipiell nicht betroffen sind Programme, die in einer interpretierten Sprache wie Python oder Java geschrieben 
-sind. Bei diesen Sprachen wäre nur ein Overflow im Interpreter selber möglich, da dieser in der Regel auf einer der zuerst 
+Grundsätzlich kann jede Software von Buffer Overflows betroffen sein, die in einer Programmiersprache geschrieben ist,
+welche direkte Zugriffe auf die Speicherstrukturen des Systems ermöglicht. Beispiele hierfür wären: Assembler, C/C++ oder
+Fortran. Prinzipiell nicht betroffen sind Programme, die in einer interpretierten Sprache wie Python oder Java geschrieben
+sind. Bei diesen Sprachen wäre nur ein Overflow im Interpreter selber möglich, da dieser in der Regel auf einer der zuerst
 genannten Sprachen basiert.
 
 Am problematischsten sind hierbei Funktionen, die es ermöglichen Nutzereingaben zu lesen und zu speichern,
@@ -20,12 +20,12 @@ dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in a
 
 \subsection{Format-String-Schwachstelle}
 Bei Format-String-Schwachstellen handelt es sich zwar nicht direkt um eine Art von Buffer Overflow,
-jedoch können diese oft in ähnlichen Kontexten aufkommen und ermöglichen es Angreifern, 
-Informationen über die Interna eines Programms zu gewinnen. 
+jedoch können diese oft in ähnlichen Kontexten aufkommen und ermöglichen es Angreifern,
+Informationen über die Interna eines Programms zu gewinnen.
 
 Problematisch ist hierbei die unvorsichtige Verwendung von Formatierungsfunktionen wie \codeline{fprint()}.
 Soll beispielsweise eine Zeichenkette ausgegeben werden, sollte korrekterweise ein Formatierungsparameter
-wie \codeline{\%s} verwendet werden: \codeline{printf(“\%s”, chars)}. Die Unterschlagung dieses Parameters 
+wie \codeline{\%s} verwendet werden: \codeline{printf(“\%s”, chars)}. Die Unterschlagung dieses Parameters
 scheint zwar auf den ersten Blick dasselbe Ergebnis zu liefern: \codeline{printf(chars)}. Die zweite Variante ermöglicht
 es dem Angreifer jedoch, eigene Parameter einzusetzen, um Informationen auszulesen oder zu manipulieren:
 \begin{itemize}
@@ -37,12 +37,12 @@ es dem Angreifer jedoch, eigene Parameter einzusetzen, um Informationen auszules
 \pagebreak %MUSS WEG BEI ÄNDERUNG
 
 \subsection{Szenario}
-Im Folgenden wird nun ein konstruiertes Szenario in einer virtuellen Umgebung betrachtet. 
-Die beiden Akteure sind auf der einen Seite ein Linux Server, der eine verwundbare C-Applikation über einen Port 
+Im Folgenden wird nun ein konstruiertes Szenario in einer virtuellen Umgebung betrachtet.
+Die beiden Akteure sind auf der einen Seite ein Linux Server, der eine verwundbare C-Applikation über einen Port
 bereitstellt, und auf der anderen Seite eine Kali Box, die die Rolle des Angreifers übernimmt.
 
-Es wird davon ausgegangen, dass der Angreifer mindestens über eine Kopie der Software verfügt. Für einen Angriff 
-ist dies zwar prinzipiell nicht notwendig, jedoch ermöglicht es ihm eine detailliertere Analyse der Software in 
+Es wird davon ausgegangen, dass der Angreifer mindestens über eine Kopie der Software verfügt. Für einen Angriff
+ist dies zwar prinzipiell nicht notwendig, jedoch ermöglicht es ihm eine detailliertere Analyse der Software in
 einer Debugging-Umgebung.
 \subsection{C-Programm}
 Das bereitgestellte C-Programm springt aus \codeline{main()} in eine Funktion \codeline{gruss()}.
@@ -88,8 +88,8 @@ in den Stack verweist.
     \caption{Memory Map}
 \end{figure}
 
-Mit dem Wissen, worauf diese Adresse verweist, lassen sich andere Adressen relativ zu dieser berechnen und 
-ASLR (Address Space Layout Randomization) umgehen. 
+Mit dem Wissen, worauf diese Adresse verweist, lassen sich andere Adressen relativ zu dieser berechnen und
+ASLR (Address Space Layout Randomization) umgehen.
 
 Der GDB wird nun an den Prozess angehängt und ein Breakpoint an das Ende der \codeline{gruss()} Funktion gesetzt.
 In das Programm werden nun einige leicht wiedererkennbare Zeichenketten eingegeben und der Speicher um die
@@ -149,7 +149,7 @@ Shellcodes geführt wird.
 
 Im folgenden Beispiel-Exploit wählen wir die erste Variante und verwenden zusätzlich eine NOP Slide:
 \begin{enumerate}
-    \item Nach einem erfolgreichen Verbindungsaufbau senden wir dem Dienst eine Folge von Format-String-Parametern, um uns die Startadresse des Buffers zu berechnen: 
+    \item Nach einem erfolgreichen Verbindungsaufbau senden wir dem Dienst eine Folge von Format-String-Parametern, um uns die Startadresse des Buffers zu berechnen:
 \end{enumerate}
 \begin{figure}[h]
     \centering

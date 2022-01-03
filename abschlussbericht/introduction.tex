@@ -1,13 +1,13 @@
 \section{Abstract}
 Buffer Overflows gehören trotz ihres hohen Alters noch immer zu den relevantesten Schwachstellen in Computerprogrammen.
-Aus diesem Grund ist es unabdinglich für jeden, der sich im Feld der Software-Entwicklung oder IT-Sicherheit bewegt, 
-ein grundlegendes Verständnis für Buffer Overflows aufzubauen. Ein Überblick über große und aktuelle Angriffe zeigt, 
-wie verheerend die Auswirkungen einer solchen Schwachstelle sein können. Ein Buffer Overflow beschreibt im weitesten 
-Sinne das “Überlaufen” eines Speicherbereiches durch unvorhergesehene Eingaben, wodurch Schadcode in einen laufenden 
+Aus diesem Grund ist es unabdinglich für jeden, der sich im Feld der Software-Entwicklung oder IT-Sicherheit bewegt,
+ein grundlegendes Verständnis für Buffer Overflows aufzubauen. Ein Überblick über große und aktuelle Angriffe zeigt,
+wie verheerend die Auswirkungen einer solchen Schwachstelle sein können. Ein Buffer Overflow beschreibt im weitesten
+Sinne das “Überlaufen” eines Speicherbereiches durch unvorhergesehene Eingaben, wodurch Schadcode in einen laufenden
 Prozess injiziert und ausgeführt werden kann.
 
-Der vorliegende Projektbericht beschäftigt sich deshalb mit einer theoretisch-technischen Einführung sowie der praktischen 
-Analyse von Buffer-Overflow-Schwachstellen. Um eine Grundlage für praktische Tests zu schaffen, wurden zunächst  
+Der vorliegende Projektbericht beschäftigt sich deshalb mit einer theoretisch-technischen Einführung sowie der praktischen
+Analyse von Buffer-Overflow-Schwachstellen. Um eine Grundlage für praktische Tests zu schaffen, wurden zunächst
 die Struktur und der Ablauf eines Programms im Speicher analysiert und theoretische Angriffsmöglichkeiten konstruiert.
 Anschließend wurde ein fiktives Angriffsszenario und ein verwundbares C-Programm entwickelt. Hierbei zeigte sich schnell,
 dass bereits die Nutzung von vermeintlich harmlosen Funktionen, wie \codeline{fprint()} oder \codeline{gets()}, schwerwiegende Auswirkungen
@@ -28,7 +28,7 @@ der Buffer Overflows besser verstehen und einen direkten Nutzen für seine Arbei
 \pagebreak
 
 \section{Einleitung}
-Noch immer sind Buffer Overflows eine der relevantesten Schwachstellen in Computerprogrammen. 
+Noch immer sind Buffer Overflows eine der relevantesten Schwachstellen in Computerprogrammen.
 Der folgende Projektbericht beschäftigt sich daher mit der Theorie und Anwendungspraxis hinter Angriffen dieser Art.
 Der Leser soll verstehen, warum die Gefahr durch Buffer Overflows immer noch hoch ist und wie er sich möglichst effizient schützen kann.
 Hierfür werden zunächst einige historische sowie aktuelle Beispiele für Angriffe auf der Grundlage von Buffer Overflows betrachtet.
@@ -37,5 +37,5 @@ An konkreten Beispielen werden Shellcode und verschiedene Angriffstechniken erl�
 Diese werden in einer simulierten Serverumgebung ausgeführt und ein reales System kompromittiert.
 Abschließend werden unterschiedliche Abwehrmechanismen analysiert und erklärt.
 
-Durch eine umfangreiche Betrachtung von Buffer Overflows aus der Sicht eines Angreifers und die Erläuterung verschiedener Verteidigungsmaßnahmen, 
+Durch eine umfangreiche Betrachtung von Buffer Overflows aus der Sicht eines Angreifers und die Erläuterung verschiedener Verteidigungsmaßnahmen,
 sollte der Leser ein besseres Verständnis für die Thematik bekommen und für Angriffe dieser Art sensibilisiert werden.

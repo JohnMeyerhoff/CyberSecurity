@@ -8,7 +8,7 @@ das Schreiben von Code, der bei der Ausführung eine Remote-Shell öffnet. Die B
 beschreibt mittlerweile jeden Byte-Code, der in einen Exploit eingefügt wird, um eine gewünschte Aufgabe zu erfüllen.
 
 Zwar ist es theoretisch möglich Shellcode in höheren Programmiersprachen zu schreiben, in der Praxis ist die effizienteste und
-fast ausschließlich verwendete Sprache jedoch Assembly. Dies ermöglicht, so maschinennah wie möglich zu arbeiten, 
+fast ausschließlich verwendete Sprache jedoch Assembly. Dies ermöglicht, so maschinennah wie möglich zu arbeiten,
 um mehr Kontrolle über Abläufe zu haben und Speichergröße zu sparen. Der verfügbare Speicher für Shellcode ist meist limitiert.
 Da Shellcode in Assembly geschrieben wird, ist es wichtig zu beachten, auf welcher Hardware und auf welchem Betriebssystem dieser laufen soll.
 Es bestehen klare Unterschiede zwischen Linux- und Windows Shellcode: Unter Linux hat man überwiegend direkten Zugriff auf Interface und Kernel,
@@ -27,7 +27,7 @@ was unter Windows in der Regel nicht möglich ist. Im Folgenden wird ein Shellco
 
 
 
-RAX -> system call number (322) 
+RAX -> system call number (322)
 RDI -> first argument (path)
 RSI -> second argument (pointer to path)
 RDX -> third argument (0)

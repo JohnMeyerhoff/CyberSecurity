@@ -49,14 +49,14 @@ Ausgeführter Shellcode läuft dann immer unter denselben Privilegien wie der Pr
 \end{figure}
 
 \subsection{Heap Overflow}
-Während der Laufzeit eines Programms allozierter Speicher (z.\,B. durch \codeline{malloc()}) wird im Heap angelegt. Dabei setzt sich 
-jeder Speicherblock aus einem Header und dem tatsächlich angeforderten Speicher zusammen. Der Header enthält hierbei, 
-je nach Implementation, Informationen über den Block, wie z.\,B. seine Größe. Aus diesen Informationen kann dann abgeleitet 
+Während der Laufzeit eines Programms allozierter Speicher (z.\,B. durch \codeline{malloc()}) wird im Heap angelegt. Dabei setzt sich
+jeder Speicherblock aus einem Header und dem tatsächlich angeforderten Speicher zusammen. Der Header enthält hierbei,
+je nach Implementation, Informationen über den Block, wie z.\,B. seine Größe. Aus diesen Informationen kann dann abgeleitet
 werden, an welcher Stelle der nächste Block beginnt.
 
-Wenn ein Angreifer nun Manipulationen im Heap-Speicher vornehmen möchte, muss er die verwendete Implementation kennen 
-und kann in der Regel nur in Richtung der neu allozierten Speicherblöcke überschreiben. Da er aus dem Heap keine Möglichkeit 
-hat, Sprungadressen direkt zu manipulieren und den Programmfluss so umzuleiten, muss er versuchen, einen bestimmten 
-Speicherblock zu überschreiben, zu dem im weiteren Programmverlauf noch einmal gesprungen wird. Dies macht Heap Overflows 
+Wenn ein Angreifer nun Manipulationen im Heap-Speicher vornehmen möchte, muss er die verwendete Implementation kennen
+und kann in der Regel nur in Richtung der neu allozierten Speicherblöcke überschreiben. Da er aus dem Heap keine Möglichkeit
+hat, Sprungadressen direkt zu manipulieren und den Programmfluss so umzuleiten, muss er versuchen, einen bestimmten
+Speicherblock zu überschreiben, zu dem im weiteren Programmverlauf noch einmal gesprungen wird. Dies macht Heap Overflows
 in der Praxis um einiges komplexer und schwieriger als Stack Overflows.
 
