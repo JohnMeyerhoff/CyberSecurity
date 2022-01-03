@@ -7,21 +7,21 @@ kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombina
 zu blockieren. Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
 \subsection{Übersicht der Maßnahmen}
 Low-Level:
-    \begin{itemize}
-        \item Hardware-basierte Lösungen
-        \item Betriebssystembasierte Ansätze
-    \end{itemize}
+\begin{itemize}
+    \item Hardware-basierte Lösungen
+    \item Betriebssystembasierte Ansätze
+\end{itemize}
 Passive Härtung der Programme:
-    \begin{itemize}
-        \item C Range Error Detector und Out Of Bounds Object
-        \item Safe Pointer Instrumentalisierung
-        \item Manuelles Buffer-Overflow Blocken (Input-Bereinigung)
-    \end{itemize}
+\begin{itemize}
+    \item C Range Error Detector und Out Of Bounds Object
+    \item Safe Pointer Instrumentalisierung
+    \item Manuelles Buffer-Overflow Blocken (Input-Bereinigung)
+\end{itemize}
 Aktive (Analysierende) Lösungen:
-    \begin{itemize}
-        \item Statische Code-Analyse
-        \item Stack-Schutz mit ``Canary'' (Zufallszahl)
-    \end{itemize}
+\begin{itemize}
+    \item Statische Code-Analyse
+    \item Stack-Schutz mit ``Canary'' (Zufallszahl)
+\end{itemize}
 
 
 \subsection{Low-Level Probleme}
@@ -63,10 +63,10 @@ die Ausführung des Programms abbrechen.
 %TODO: ASLR Beschreiben
 
 \subsection{Code-Beispiel}
-    \begin{center}
-        %TODO: Besseres Beispiel finden.
-        \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/Libverify.png}
-    \end{center}
+\begin{center}
+    %TODO: Besseres Beispiel finden.
+    \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/Libverify.png}
+\end{center}
 
 \subsection{Testen}
 Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
@@ -77,9 +77,12 @@ zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
 Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
 werden.
 Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
-zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine 
+zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine
 potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
 von einem sogenannten Fuzzer erstellt werden.
 Als Alternative zum Fuzzing gibt es Spezifische Payloads und
 Escape-Sequenzen welche - auch automatisiert - getestet werden können.
+
+\subsubsection{Bug Bounty Programme}
+Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
 
