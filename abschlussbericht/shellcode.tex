@@ -1,21 +1,18 @@
 \section{Shellcode}
 \subsection{Definition}
-Um den nächsten Teil besser zu verstehen, sollte vorher erklärt werden, was genau Shellcode ist, wofür er 
-benutzt wird und was der Zusammenhang zur Assembler Programmiersprache ist. Shellcode ist definiert als eine 
-Reihe von Anweisungen, die über einen Exploit injiziert und dann durch den Prozess ausgeführt werden.
-Shellcode wird verwendet, um Register direkt zu manipulieren und die Funktionalität eines Programms auszunutzen. 
-Es ist natürlich möglich, Shellcode in höheren Programmiersprachen zu schreiben, aber die effizienteste und fast 
-ausschließlich benutzte Variante ist in der Sprache Assembly, die so maschinennah wie möglich ist, um genau steuern 
-zu können was passiert und Speichergröße zu sparen. Meistens arbeitet man nämlich mit einer limitierten Speichergröße.
-In der Computersicherheit bedeutet Shellcoding im wahrsten Sinne des Wortes das Schreiben von Code, der bei der
-Ausführung eine Remote-Shell zurückgibt. Die Bedeutung von Shellcode hat sich weiterentwickelt und stellt nun jeden
-Byte-Code dar, der in einen Exploit eingefügt wird, um eine gewünschte Aufgabe zu erfüllen. Da Shellcode in Assembly
-geschrieben wird und die Sprache so maschinennah wie nur möglich ist, ist es außerdem noch wichtig mit welcher
-Hardware und mit welchem Betriebssystem man diese schreibt. Es bestehen nämlich Unterschiede zwischen Linux
-Shellcode und Windows Shellcode:  Bei Linux hat man direkten Zugriff auf das Interface und das Kernel, was bei
-Windows leider nicht möglich ist. Im folgenden Beispiel wird ein Shellcode-Beispiel in der Sprache Assembly erläutert.
-Die Idee hinter dem Beispiel ist es, zu zeigen, wie man mit einem Buffer Overflow Zugriff bekommen kann und dann den
-vorbereiteten Shellcode injizieren kann, damit dieser privilegiert ausgeführt wird und somit Schaden am Ziel verursacht.
+Um das folgende Beispiel besser zu verstehen, sollte zunächst erklärt werden, was genau Shellcode ist und wofür er benutzt wird.
+Shellcode ist definiert als eine Folge von Anweisungen, die über einen Exploit in einen Prozess injiziert und
+dann durch diesen ausgeführt werden. Er wird verwendet, um die Funktionalität eines Prozesses zu verändern und
+Befehle auf einem Zielsystem auszuführen. In der Computersicherheit bedeutet Shellcoding im ursprünglichen Sinne,
+das Schreiben von Code, der bei der Ausführung eine Remote-Shell öffnet. Die Bedeutung von Shellcode hat sich jedoch weiterentwickelt und
+beschreibt mittlerweile jeden Byte-Code, der in einen Exploit eingefügt wird, um eine gewünschte Aufgabe zu erfüllen.
+
+Zwar ist es theoretisch möglich Shellcode in höheren Programmiersprachen zu schreiben, in der Praxis ist die effizienteste und
+fast ausschließlich verwendete Sprache jedoch Assembly. Dies ermöglicht, so maschinennah wie möglich zu arbeiten, 
+um mehr Kontrolle über Abläufe zu haben und Speichergröße zu sparen. Der verfügbare Speicher für Shellcode ist meist limitiert.
+Da Shellcode in Assembly geschrieben wird, ist es wichtig zu beachten, auf welcher Hardware und auf welchem Betriebssystem dieser laufen soll.
+Es bestehen klare Unterschiede zwischen Linux- und Windows Shellcode: Unter Linux hat man überwiegend direkten Zugriff auf Interface und Kernel,
+was unter Windows in der Regel nicht möglich ist. Im Folgenden wird ein Shellcode-Beispiel für 64Bit Unix Systeme betrachtet.
 
 \subsection{Beispiel}
 \begin{figure}[h]
