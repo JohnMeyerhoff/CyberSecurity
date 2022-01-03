@@ -20,7 +20,8 @@ zunächst in den Arbeitsspeicher geladen. Im Speicher gliedert sich der Prozess 
     \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/process.png}
     \caption{Prozess im Speicher}
 \end{figure}
-Wenn eine neue Funktion aufgerufen wird, legt diese zunächst ihre Funktionsparameter auf den Stack,
+
+Wenn eine Funktion aufgerufen wird, legt diese zunächst ihre Funktionsparameter auf den Stack,
 gefolgt von einer Return-Adresse, die angibt, zu welcher Stelle im Programm im Anschluss an die
 Ausführung der Funktion gesprungen wird, und einem Base Pointer. Darauf folgen lokale Daten,
 die von der Funktion verwendet werden, wie z.\,B. ein Char Array.
