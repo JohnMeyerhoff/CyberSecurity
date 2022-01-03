@@ -1,35 +1,24 @@
 \section{Geschichte}
 \subsection{Bekannte Buffer Overflows}
-Es folgen zwei ältere, aber sehr bekannte Buffer-Overflow-Attacken und zwei aktuell relevante Beispiele,
-welche dieselbe Schwachstelle ausnutzen.
+Es folgen Beispiele für historische sowie aktuelle Angriffe auf der Grundlage von Buffer Overflows:
 
-Beim ersten handelt es sich um „The Morris Worm“ der am 2. November 1988 ins damals noch junge Internet freigelassen
-worden ist und sich rasant verbreitete. Er verursachte hohen Schaden in Form von überlasteten Systemen bzw. Ausfällen
-von Systemen. Das Programm wurde vom amerikanischen Robert T. Morris in der Sprache C geschrieben, dessen Dateigröße
-ca. 3200 Programmierzeilen umfasst. Robert T. Morris war Student an der Cornell University und die eigentliche
-Idee hinter seinem Experiment war es, die angeschlossenen Rechner an einem Netz zu zählen. Stattdessen wurden alle
-15 stunden 2000 Unix Systeme infiziert. Im Endeffekt war damals 10\% des gesamten Internets betroffen und um den
-Schaden des Virus einzudämmen, wurden regionale Netzwerke vom Internet getrennt.
+„The Morris Worm“ der am 2. November 1988 ins damals noch junge Internet freigelassen worden ist und sich rasant verbreitete,
+verursachte großen Schaden in Form von überlasteten Systemen und Totalausfällen. Der Wurm wurde vom amerikanischer Robert T. Morris in C geschrieben
+und umfasste ca. 3200 Programmierzeilen. Morris war Student an der Cornell University und wollte mit seinem Programm die angeschlossenen Rechner an einem Netz zählen.
+Stattdessen legte er nach nur 15 Stunden 10\% des damaligen Internets lahm. Morris wurde zu drei Jahren Haft und einer Geldstrafe von 10.000 US-Dollar verurteilt.
 
-Der nächste von den älteren ist der „SQL-Slammer“. Dieser begann am 25. Januar 2003 und hatte schon innerhalb
-von 30 Minuten 75.000 Opfer. Der Computerwurm infizierte ungepatchte Microsoft SQL Server 2000 und nutze zwei
-Buffer Overflows. Das Besondere an diesem Wurm war seine Größe: Er bestand nur aus einem UDP-Paket mit lediglich
-376 Bytes und befand sich nur auf dem Arbeitsspeicher eines Computers und nicht jedoch auf der Festplatte.
-Zusätzlich enthielt er keine Payload und seine einzige Aufgabe war es, sich selbst zu kopieren und auf so
-vielen zufälligen Computern wie möglich zu verbreiten. Bei den Angreifern handelt es ich um zwei Mitglieder
-der Virenschreibergruppe 29A, die im Jahr 2004 gefasst worden sind.
+Ein weiteres historisches Beispiel ist der „SQL-Slammer“. Dieser wurde am 25. Januar 2003 entfesselt und hatte schon innerhalb von 30 Minuten über 75.000 Opfer.
+Der Computerwurm infizierte ungepatchte Microsoft SQL Server 2000 und nutze dabei zwei Buffer Overflow Schwachstellen.
+Das Besondere an diesem Wurm war seine kompakte Größe: Er bestand aus einem UDP-Paket von lediglich 376 Bytes und bewegte sich ausschließlich im Arbeitsspeicher des befallenen 
+Computers, nicht jedoch auf der Festplatte. Der Wurm lieferte dabei keinerlei Payload, sondern versuchte lediglich sich selbst zu kopieren und
+so viele Computer wie möglich zu infizieren. Bei den Entwicklern handelte es ich um zwei Mitglieder der Gruppe 29A, die im Jahr 2004 gefasst wurden.
 
-Der Erste der neuen Attacken geschah bei einem der größten Messenger, und zwar WhatsApp. im Jahr
-2019 wurde eine Sicherheitslücke ausgenutzt, die in DoS-Attacken über manipulierten MP4-Dateien endete.
-Mit der Hilfe der Videos konnte man sich Zugriff auf Smartphones verschaffen und Malware einschleusen.
-Die Security Abteilung sprach von einem „Stack-based buffer Overflow“ der über korrupte MP4-Dateien ausgenutzt wird.
-Der Fehler wurde durch einen neuen Patch behoben und es wird empfohlen, immer die neueste Version zu haben.
+Eine aktuellere Schwachstelle fand sich 2019 im Messenger Dienst WhatsApp. Diese ermöglichte es Angreifern,
+mit der Hilfe von manipulierten Videodateien Malware einzuschleusen und sich so Zugriff auf Smartphones zu verschaffen.
+Die Sicherheitsabteilung von Facebook sprach von einem „Stack-based Buffer Overflow“ der über korrupte MP4-Dateien ausgenutzt wurde.
+Der Fehler wurde durch einen Patch behoben.
 
-Beim letzten Angriff handelt es sich um eine Sicherheitslücke bei HP-Druckern. Dabei handelt es sich konkret um zwei
-Sicherheitsprobleme in der Firmware von HP und viele Druckermodelle sind davon betroffen. Eine Liste dieser wurde
-bereits veröffentlicht. Die Sicherheitslücke hat zur Folge, dass der Angreifer eine korrupte Datei an den Drucker
-sendet und diese zu einem Buffer Overflow führt, dadurch haben die Angreifer dann Fernzugriff auf das Gerät und können
-infizierten Code ausführen. Auch hier wurde die Lücke durch ein Update geschlossen.
-
-
-
+Beim letzten Beispiel handelt es sich um eine Sicherheitslücke in HP-Druckern.
+Dabei dreht es sich konkret um zwei Sicherheitsprobleme in der Firmware von HP, von der viele Druckermodelle betroffen sind.
+Eine Liste dieser wurde bereits veröffentlicht. Die Sicherheitslücken erlauben dem Angreifer durch veränderte Anfragen an den Drucker einen Buffer Overflow auszulösen
+und Schadcode zu injizieren. Die Lücken wurden mittlerweile durch ein Update geschlossen, es existieren jedoch immer noch viele anfällige Systeme.
