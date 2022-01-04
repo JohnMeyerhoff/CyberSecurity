@@ -3,7 +3,7 @@
 Im weitesten Sinne beschreibt ein Buffer Overflow eine Schwachstelle in einem Computerprogramm,
 bei der ein Angreifer einen Speicherbereich fester Größe überschreibt und diesen so zum “Überlaufen” bringt.
 Durch Ausspähen und Analysieren der Software kann dieses Überschreiben so gezielt geschehen, dass der Fluss des
-Programms verändert und zuvor injizierter Schadcode ausgeführt wird. \cite{NISTSP}
+Programms verändert und zuvor injizierter Schadcode ausgeführt wird. \cite{NISTSP} \cite{springer}
 \subsection{Speicheraufbau}
 Wird eine Binärdatei durch den Linker von der Festplatte entnommen, so wird der auszuführende Programmcode
 zunächst in den Arbeitsspeicher geladen. Im Speicher gliedert sich der Prozess dann in folgende Segmente:
@@ -24,7 +24,7 @@ zunächst in den Arbeitsspeicher geladen. Im Speicher gliedert sich der Prozess 
 Wenn eine Funktion aufgerufen wird, legt diese zunächst ihre Funktionsparameter auf den Stack,
 gefolgt von einer Return-Adresse, die angibt, zu welcher Stelle im Programm im Anschluss an die
 Ausführung der Funktion gesprungen wird, und einem Base Pointer. Darauf folgen lokale Daten,
-die von der Funktion verwendet werden, wie z.\,B. ein Char Array.
+die von der Funktion verwendet werden, wie z.\,B. ein Char Array. \cite{hamburg}
 \pagebreak
 \subsection{Stack Overflow}
 Der zuvor beschriebene Aufbau des Stacks lässt sich nun durch gezieltes Einfügen von Daten in eine Funktion ausnutzen.
@@ -38,7 +38,7 @@ Weisen beeinflusst werden:
     \item Auch durch das Überschreiben von Return Pointern kann auf Shellcode umgeleitet werden.
 \end{itemize}
 
-Ausgeführter Shellcode läuft dann immer unter denselben Privilegien wie der Prozess.
+Ausgeführter Shellcode läuft dann immer unter denselben Privilegien wie der Prozess. \cite{cloudflare} \cite{fortinet}
 \begin{figure}[h]%
     \centering
     \subfloat[\centering Vorher]{{\includegraphics[width=0.45\textwidth,height=0.75\textheight,keepaspectratio]{images/buffer1.png} }}%
@@ -58,5 +58,5 @@ Wenn ein Angreifer nun Manipulationen im Heap-Speicher vornehmen möchte, muss e
 und kann in der Regel nur in Richtung der neu allozierten Speicherblöcke überschreiben. Da er aus dem Heap keine Möglichkeit
 hat, Sprungadressen direkt zu manipulieren und den Programmfluss so umzuleiten, muss er versuchen, einen bestimmten
 Speicherblock zu überschreiben, zu dem im weiteren Programmverlauf noch einmal gesprungen wird. Dies macht Heap Overflows
-in der Praxis um einiges komplexer und schwieriger als Stack Overflows.
+in der Praxis um einiges komplexer und schwieriger als Stack Overflows. \cite{heise}
 
