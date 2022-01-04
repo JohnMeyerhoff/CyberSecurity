@@ -52,6 +52,200 @@
       \verb https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-28ver2.pdf
       \endverb
     \endentry
+    \entry{springer}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f611cde69d8423f318c699777ba2bcdb}{%
+           family={Keromytis},
+           familyi={K\bibinitperiod},
+           given={Angelos\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f611cde69d8423f318c699777ba2bcdb}
+      \strng{fullhash}{f611cde69d8423f318c699777ba2bcdb}
+      \strng{bibnamehash}{f611cde69d8423f318c699777ba2bcdb}
+      \strng{authorbibnamehash}{f611cde69d8423f318c699777ba2bcdb}
+      \strng{authornamehash}{f611cde69d8423f318c699777ba2bcdb}
+      \strng{authorfullhash}{f611cde69d8423f318c699777ba2bcdb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Encyclopedia of Cryptography and Security, Buffer Overflow Attacks}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://link.springer.com/referenceworkentry/10.1007/978-1-4419-5906-5_502
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/referenceworkentry/10.1007/978-1-4419-5906-5_502
+      \endverb
+    \endentry
+    \entry{hamburg}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1124a8999aad75564488f6467521f248}{%
+           family={Konstantin\bibnamedelima Schleser},
+           familyi={K\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Denis\bibnamedelima Graf},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod},
+           suffix={Tim\bibnamedelima Krämer},
+           suffixi={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universität Hamburg}%
+      }
+      \strng{namehash}{1124a8999aad75564488f6467521f248}
+      \strng{fullhash}{1124a8999aad75564488f6467521f248}
+      \strng{bibnamehash}{1124a8999aad75564488f6467521f248}
+      \strng{authorbibnamehash}{1124a8999aad75564488f6467521f248}
+      \strng{authornamehash}{1124a8999aad75564488f6467521f248}
+      \strng{authorfullhash}{1124a8999aad75564488f6467521f248}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SVS-Masterprojekt IT-Sicherheit, Buffer-Overflow}
+      \verb{urlraw}
+      \verb https://www2.informatik.uni-hamburg.de/fachschaft/wiki/images/f/f0/7kraemer-Projekt-ausarbeitung.pdf
+      \endverb
+      \verb{url}
+      \verb https://www2.informatik.uni-hamburg.de/fachschaft/wiki/images/f/f0/7kraemer-Projekt-ausarbeitung.pdf
+      \endverb
+    \endentry
+    \entry{cloudflare}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3f07179a07b2a7661e37a3fd0e652a07}{%
+           family={Cloudflare},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \strng{fullhash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \strng{bibnamehash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \strng{authorbibnamehash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \strng{authornamehash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \strng{authorfullhash}{3f07179a07b2a7661e37a3fd0e652a07}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{What is buffer overflow?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.cloudflare.com/de-de/learning/security/threats/buffer-overflow/
+      \endverb
+      \verb{url}
+      \verb https://www.cloudflare.com/de-de/learning/security/threats/buffer-overflow/
+      \endverb
+    \endentry
+    \entry{fortinet}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1f25b8a9986a2e7a04ee9538c462e578}{%
+           family={Fortinet},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \strng{fullhash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \strng{bibnamehash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \strng{authorbibnamehash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \strng{authornamehash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \strng{authorfullhash}{1f25b8a9986a2e7a04ee9538c462e578}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Buffer Overflow}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.fortinet.com/resources/cyberglossary/buffer-overflow
+      \endverb
+      \verb{url}
+      \verb https://www.fortinet.com/resources/cyberglossary/buffer-overflow
+      \endverb
+    \endentry
+    \entry{heise}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d193c6006d897a01a6fb9ace7916e041}{%
+           family={Lindner},
+           familyi={L\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {heise Security}%
+      }
+      \strng{namehash}{d193c6006d897a01a6fb9ace7916e041}
+      \strng{fullhash}{d193c6006d897a01a6fb9ace7916e041}
+      \strng{bibnamehash}{d193c6006d897a01a6fb9ace7916e041}
+      \strng{authorbibnamehash}{d193c6006d897a01a6fb9ace7916e041}
+      \strng{authornamehash}{d193c6006d897a01a6fb9ace7916e041}
+      \strng{authorfullhash}{d193c6006d897a01a6fb9ace7916e041}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Ein Haufen Risiko}
+      \field{year}{2006}
+      \verb{urlraw}
+      \verb https://m.heise.de/security/artikel/Ein-Haufen-Risiko-270800.html?seite=all
+      \endverb
+      \verb{url}
+      \verb https://m.heise.de/security/artikel/Ein-Haufen-Risiko-270800.html?seite=all
+      \endverb
+    \endentry
+    \entry{owasp1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=24b95a7fdad5a850196cd87546dcc70b}{%
+           family={OWASP},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{fullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{bibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Buffer Overflow}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
+      \endverb
+    \endentry
+    \entry{owasp2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=24b95a7fdad5a850196cd87546dcc70b}{%
+           family={OWASP},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{fullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{bibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Format String Attack}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://owasp.org/www-community/attacks/Format_string_attack
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-community/attacks/Format_string_attack
+      \endverb
+    \endentry
     \entry{wiki1}{misc}{}
       \name{author}{1}{}{%
         {{hash=9c677286866aad38f8e9b660f5411814}{%
@@ -65,8 +259,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -92,8 +286,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -118,8 +312,8 @@
       \strng{authorbibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
       \strng{authornamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
       \strng{authorfullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -130,6 +324,92 @@
       \endverb
       \verb{url}
       \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
+      \endverb
+    \endentry
+    \entry{phrack}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a9f65d6acef76198df58244d36bbcc4e}{%
+           family={One},
+           familyi={O\bibinitperiod},
+           given={Aleph},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PHRACK}%
+      }
+      \strng{namehash}{a9f65d6acef76198df58244d36bbcc4e}
+      \strng{fullhash}{a9f65d6acef76198df58244d36bbcc4e}
+      \strng{bibnamehash}{a9f65d6acef76198df58244d36bbcc4e}
+      \strng{authorbibnamehash}{a9f65d6acef76198df58244d36bbcc4e}
+      \strng{authornamehash}{a9f65d6acef76198df58244d36bbcc4e}
+      \strng{authorfullhash}{a9f65d6acef76198df58244d36bbcc4e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Smashing the Stack For Fun And Profit}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb http://phrack.org/issues/49/14.html#article
+      \endverb
+      \verb{url}
+      \verb http://phrack.org/issues/49/14.html#article
+      \endverb
+    \endentry
+    \entry{computerphile}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=dc127e7dadeee2cba228e20c7e1c6b85}{%
+           family={Pound},
+           familyi={P\bibinitperiod},
+           given={Asst.\bibnamedelimi Prof.\bibnamedelimi Dr.\bibnamedelimi Mike},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Nottingham, Computerphile}%
+      }
+      \strng{namehash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \strng{fullhash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \strng{bibnamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \strng{authorbibnamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \strng{authornamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \strng{authorfullhash}{dc127e7dadeee2cba228e20c7e1c6b85}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{März}
+      \field{title}{Running a Buffer Overflow Attack}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
+      \endverb
+    \endentry
+    \entry{protostar}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=a5e828e0887c0d0a1988cbfd0c5413ff}{%
+           family={Protostar},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \strng{fullhash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \strng{bibnamehash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \strng{authorbibnamehash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \strng{authornamehash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \strng{authorfullhash}{a5e828e0887c0d0a1988cbfd0c5413ff}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Exploit Education}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://exploit.education/
+      \endverb
+      \verb{url}
+      \verb https://exploit.education/
       \endverb
     \endentry
   \enddatalist

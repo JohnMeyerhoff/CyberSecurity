@@ -58,6 +58,14 @@ dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem B
 die Ausführung des Programms abbrechen.
 
 %TODO: ASLR Beschreiben
+%aslr wird ausgehebelt über adresswissen
+%ref auf debugging
+\subsection{Address space layout randomization}
+\newacronym{aslr}{ASLR}{Address space layout randomization}
+Bei \acrlong{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
+auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
+\acrshort{aslr} ist leider wie in \ref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
+bereits eine Adresse kennt.
 
 \subsection{Code-Beispiel}
 \begin{center}
@@ -82,4 +90,18 @@ Escape-Sequenzen welche - auch automatisiert - getestet werden können.
 
 \subsubsection{Bug Bounty Programme}
 Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
+Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
+wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung)
+um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche art des Zugriffes
+der Angriff ermöglicht.
+
+Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
+Buffer Overflow mit der richtigen Payload ein Shellcode ausgeführt werden kann welcher dann das
+höchste Ziel bei einem Angriff - eine Root Shell - erzielt.
+Diese hohe Zugriffsstufe macht einen Buffer Overflow angriff immer zum Attraktivsten Angriffsvektor,
+falls mehrere Schwachstellen einer Software bekannt sind. Sind mehrere Schwachstellen bekannt, ist die
+Version aber meist veraltet. 
+
+
+
 

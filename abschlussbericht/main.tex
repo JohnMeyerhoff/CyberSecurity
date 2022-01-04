@@ -1,5 +1,6 @@
 \documentclass[12pt,oneside,a4paper,titlepage]{article}
 \input{dependencies.tex}
+\makeglossaries
 \input{config.tex}
 \bibliography{bibliography.bib}
 %\nopagenumbers
@@ -36,5 +37,7 @@
     heading=bibintoc,
     title={Literaturverzeichnis}
 ]
+\pagebreak
+\printacronyms
 %\printbibliography[heading=subbibintoc,type=article,title={Articles only}] nicht machen
 \end{document}
