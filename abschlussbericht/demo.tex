@@ -16,7 +16,7 @@ dieser Art sind die C Funktionen \codeline{gets()} und \codeline{strcopy()}:
     \item \codeline{strcopy(buffer, input)} Kopiert den Input (z.\,B. ein Kommandozeilenargument)\\ in den angegebenen Speicher
 \end{itemize}
 Da keine Kontrolle auf die Länge des Inputs durchgeführt wird, kann nicht sichergestellt werden,
-dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in andere Bereiche überläuft.
+dass der angegebene Speicherbereich ausreichend groß ist oder ob der Input in andere Bereiche überläuft. \cite{owasp1}
 
 \subsection{Format-String-Schwachstelle}
 Bei Format-String-Schwachstellen handelt es sich zwar nicht direkt um eine Art von Buffer Overflow,
@@ -33,7 +33,7 @@ es dem Angreifer jedoch, eigene Parameter einzusetzen, um Informationen auszules
     \item \codeline{\%s} Liest Strings aus dem Prozess
     \item \codeline{\%n} Schreibt einen Integer in den Prozess
     \item \codeline{\%p} Gibt Pointer auf void aus
-\end{itemize}
+\end{itemize} \cite{owasp2}
 \pagebreak %MUSS WEG BEI ÄNDERUNG
 
 \subsection{Szenario}
