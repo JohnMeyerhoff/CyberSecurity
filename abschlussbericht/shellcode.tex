@@ -27,7 +27,7 @@ In \codeline{rax} befindet sich nun die Hexadezimalzahl \codeline{0x142} bzw. di
 Für den Syscall entspricht dieser Wert der Anweisung \codeline{execveat()}, 
 die über einen Dateipfad angegebene Programme ausführt. Um den Syscall durchführen zu können, benötigt \codeline{execveat()} noch fünf Argumente, 
 die über die Register \codeline{rdi}, \codeline{rdx}, \codeline{r10} und \codeline{r8} gesetzt werden. 
-In \codeline{rdi} wird die Zeichenfolge \codeline{(``/bin//sh``)} als Hexadezimalzahl kodiert geladen. 
+In \codeline{rdi} wird die Zeichenfolge \codeline{(''/bin//sh'')} als Hexadezimalzahl kodiert geladen. 
 Zu beachten ist hierbei die invertierte Eingabe, da \codeline{execveat()} die Zeichenkette in Little-Endian-Reihenfolge erwartet. Das \codeline{rsp} Register, 
 also der Stack Pointer, 
 enthält nun einen Zeiger auf das \codeline{rdi} Register. Dieser Zeiger wird nun in das \codeline{rsi} Register geladen. Nun sind beide benötigten Argumente gesetzt. 
@@ -47,7 +47,7 @@ Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
     \begin{tabular}{rl}
          {\textbf{RAX}:}& {322 (Nummer des Syscalls)}\\
-         {\textbf{RDI}:}& {0x68732f2f6e69622f (Pfad der auszuführenden Datei: ``/bin//sh``)}\\
+         {\textbf{RDI}:}& {0x68732f2f6e69622f (Pfad der auszuführenden Datei: ''/bin//sh'')}\\
          {\textbf{RSI}:}& {Pointer auf RDI (Zeiger auf den Pfad)}
     \end{tabular}
 
