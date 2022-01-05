@@ -32,6 +32,15 @@ anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der syscall
 
 Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{images/shellstorm.png}
+    \caption{Shellcode}
+\end{figure}
+\cite{shellstorm}
+
+Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
+
 \begin{itemize}
     \item \textbf{RAX}: 322 (Nummer des syscalls)
     \item \textbf{RDI}: 0x68732f2f6e69622f (Pfad der auszuführenden Datei: "/bin//sh")
@@ -40,10 +49,3 @@ Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
     \item \textbf{R10}: 0 (Optional, nicht verwendet)
     \item \textbf{R8}:  0 (Optional, nicht verwendet)
 \end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{images/shellstorm.png}
-    \caption{Shellcode}
-\end{figure}
-\cite{shellstorm}
