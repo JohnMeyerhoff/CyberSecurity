@@ -1,37 +1,23 @@
 \pagebreak
 
 \section{Fazit}
-Unsere Ergebnisse zeigen, dass durch die schiere Masse an Angriffsmöglichkeiten (siehe \autoref{sec:stackoverflow} und \ref*{sec:heapoverflow})
-und Verteidigungsmaßnahmen, 
-es sowohl für Angreifer als auch für potenzielle Ziele, schwierig ist sämtliche Vektoren zu überblicken. 
+Unsere Ergebnisse zeigen, dass es durch die schiere Masse an Angriffsmöglichkeiten (siehe \autoref{sec:stackoverflow} und \ref*{sec:heapoverflow})
+und Verteidigungsmaßnahmen sowohl für Angreifer als auch für potenzielle Ziele schwierig ist, sämtliche Vektoren zu überblicken. 
 Verfahren wie \gls*{aslr} können Angriffsflächen verkleinern, ein absoluter Schutz ist aber, bei Ansprüchen an Funktionalität, nicht möglich.
 
-Eine der wenigen effektiven Maßnahme gegen Buffer Overflows ist die Verwendung von Canaries (siehe \autoref{sec:canaries}),
-welche den Stack und damit die Integrität des Programms vor Eingriffen schützen, bzw.
-verwendet werden um Eingriffe zu bemerken und Schäden zu verhindern - meist durch Neustart
-des Prozesses bzw. Programmes.
+Eine der wenigen effektiven Maßnahmen gegen Buffer Overflows ist die Verwendung von Canaries (siehe \autoref{sec:canaries}).
+Diese schützen den Stack und damit die Integrität des Programms und werden verwendet, um Eingriffe zu bemerken und Schäden zu verhindern - meist durch Neustart
+des Prozesses bzw. Programms.
 
 Erfolgreiche Angriffe können, je nach betroffener Software und injiziertem Shellcode, tausende von Geräten kompromittieren und
-Unternehmen nicht nur finanziell schaden, sondern auch ihre Reputation langfristig zerstören. 
-Aufgrund dieser katastrophalen Folgen, die eine Buffer Overflow Schwachstelle für ein Unternehmen oder für Privatanwender, 
+Unternehmen nicht nur finanziell schädigen, sondern auch ihre Reputation langfristig zerstören. 
+Aufgrund der katastrophalen Folgen, die eine Buffer Overflow Schwachstelle für ein Unternehmen oder für Privatanwender 
 haben kann, werden sie noch lange eine zentrale Rolle in der Informationssicherheit einnehmen und 
 Softwareunternehmen hohe Prämien für die Aufdeckung solcher Schwachstellen ausstellen. 
 
 Für angehende Entwickler ist es unabdinglich, sich saubere und sichere Programmierstandards anzueignen, um eine robuste Grundlage für resistente Software zu schaffen. 
-Niemand kann vorhersagen, ob Buffer Overflows jemals vollständig verschwinden werden, aktuell scheint dies jedoch sehr unwahrscheinlich.
+Niemand kann vorhersagen, ob Buffer Overflows jemals vollständig verschwinden werden, aktuell erscheint dies jedoch sehr unwahrscheinlich.
 
-%unabdingbar vs unabdinglich ?
-
-
-
-
-
-%☑️Themen: Kap 2 Bekannte -> Dadurch relevant   
-%Themen: Kap 3.3 3.4 -> Referenz(Es gibt mehrere Arten)
-%☑️Themen: Kap 4.2 Erlangen von Zugriff
-%Themen: Kap 5.6 Exploit
-%Themen: Kap 6.1 Übersicht
-%☑️Themen: Kap 6.8.1 Relevanter und lukrativer Bereich
 
 
 
