@@ -14,7 +14,7 @@ Low-Level:
 Passive Härtung der Programme:
 \begin{itemize}
     \item C Range Error Detector und Out Of Bounds Object
-    \item Address space layout randomization
+    \item Address Space Layout Randomization
     %\item Safe Pointer Instrumentalisierung wäre zu viel https://download.vusec.net/papers/delta-pointers_eurosys18.pdf
     \item Manuelles Buffer Overflow Blocken (Input-Bereinigung)
 \end{itemize}
@@ -61,14 +61,14 @@ die Ausführung des Programms abbrechen.
 %TODO: ASLR Beschreiben
 %ASLR wird ausgehebelt über Adress-Wissen
 %ref auf debugging
-\subsection{Address space layout randomization} \label{sec:aslr}
-Bei \gls{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
+\subsection{Address Space Layout Randomization} \label{sec:aslr}
+Bei \acrlong*{aslr} (\acrshort*{aslr}) geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
 auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
-\gls{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
+\gls*{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
 bereits eine Adresse kennt.
 ASLR ist bei Linux eine im Kernel bereitgestellte Funktionalität.
 Wenn in \codeline{sysctl} die option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
-wird \gls{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \gls{aslr} 
+wird \gls*{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \gls*{aslr} 
 standardmäßig eingeschaltet.
 Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
 zufällig gewählt, sodass wichtige Komponenten wie beispielsweise die
@@ -76,7 +76,7 @@ Prüfung einer Lizenz nicht immer am gleichen Offset liegen. Dann könnte ein An
 mit dem Wissen über die Speicheradresse des Programms die Speicheradresse beliebiger
 Komponenten zuverlässig errechnen und erreichen.
 
-Compiler haben ein Pendant zu \gls{aslr} welches \gls{pie}
+Compiler haben ein Pendant zu \gls*{aslr} welches \gls*{pie}
 genannt wird. So müssen also bei GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
 gesetzt werden. Dies führt dann dazu, dass das Kompilierte Programm auch tatsächlich an
 unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig

@@ -89,7 +89,7 @@ in den Stack verweist.
 \end{figure}
 
 Mit dem Wissen, worauf diese Adresse verweist, lassen sich andere Adressen relativ zu dieser berechnen und
-ASLR (Address Space Layout Randomization) umgehen.
+\gls*{aslr} (siehe \ref{sec:aslr}) umgehen.
 
 Der GDB wird nun an den Prozess angehängt und ein Breakpoint an das Ende der \codeline{gruss()} Funktion gesetzt.
 In das Programm werden nun einige leicht wiedererkennbare Zeichenketten eingegeben und der Speicher um die
