@@ -36,8 +36,6 @@ Abschließend werden die übrigen Argumente auf \codeline{0} gesetzt. Hierfür w
 anschließend der Wert von \codeline{rdx} in die Register \codeline{r10} und \codeline{r8} geschoben. 
 Der Syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
 
-Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{images/shellstorm.png}
@@ -47,11 +45,19 @@ Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
 Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
-\begin{itemize}
-    \item \textbf{RAX}: 322 (Nummer des Syscalls)
-    \item \textbf{RDI}: 0x68732f2f6e69622f (Pfad der auszuführenden Datei: "/bin//sh")
-    \item \textbf{RSI}: Pointer auf RDI (Zeiger auf den Pfad)
-    \item \textbf{RDX}: 0 (Optional, nicht verwendet)
-    \item \textbf{R10}: 0 (Optional, nicht verwendet)
-    \item \textbf{R8}:  0 (Optional, nicht verwendet)
-\end{itemize}
+    \begin{tabular}{rl}
+         {\textbf{RAX}:}& {322 (Nummer des Syscalls)}\\
+         {\textbf{RDI}:}& {0x68732f2f6e69622f (Pfad der auszuführenden Datei: ``/bin//sh")}\\
+         {\textbf{RSI}:}& {Pointer auf RDI (Zeiger auf den Pfad)}
+    \end{tabular}
+
+    
+Die optionalen bzw. nicht verwendeten Register zum Zeitpunkt des Syscalls:
+
+    \begin{tabular}{rl}
+        {\textbf{RDX}:}& {0 (Optional)}\\
+        {\textbf{R10}:}& {0 (Optional)}\\
+        {\textbf{R8}:}& {0 (Optional)}\\
+        {\textbf{R9}:}& {? (Nicht verwendet)}
+    \end{tabular}
+    
