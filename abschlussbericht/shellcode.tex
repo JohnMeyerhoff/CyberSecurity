@@ -20,15 +20,21 @@ Das folgende Shellcode Beispiel ermöglicht es eine Shell auf dem ausführenden 
 Der Code umfasst dabei lediglich 29 Bytes, da dieser meist so effizient und klein wie möglich sein sollte. 
 Am besten lässt sich die Erklärung von unten, also mit dem Syscall, beginnen. 
 Dieser ermöglicht es auf unterschiedliche Funktionen des Betriebssystems zurückzugreifen und Befehle auszuführen. 
-Um die Art des Syscalls festzulegen muss eine Ganzzahl in das Register rax geladen werden. 
-In diesem Fall wird zunächst die Hexadezimalzahl 0x42 geladen und das Register ah, welches ein 8 Bit Segment des 64 Bit rax Registers ist, inkrementiert. 
-In rax befindet sich nun die Hexadezimalzahl 0x142 bzw. die Dezimalzahl 322. Für den Syscall entspricht dieser Wert der Anweisung execveat(), 
-die über einen Dateipfad angegebene Programme ausführt. Um den Syscall durchführen zu können, benötigt execveat() noch 5 Argumente, 
-die über die Register rdi, rdx, r10 und r8 gesetzt werden. In rdi wird die Zeichenfolge ("/bin//sh") als Hexadezimalzahl kodiert geladen. 
-Zu beachten ist hierbei die invertierte Eingabe, da execveat() die Zeichenkette in Little Endian Reihenfolge erwartet. Das rsp Register, also der Stack Pointer, 
-enthält nun einen Zeiger auf das rdi Register. Dieser Zeiger wird nun in das rsi Register geladen. Nun sind beide benötigten Argumente gesetzt. 
-Abschließend werden die übrigen Argumente auf 0 gesetzt. Hierfür wird zunächst das rdx Register über cqo (convert word to quadword) auf 0 gesetzt und
-anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der Syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
+Um die Art des Syscalls festzulegen muss eine Ganzzahl in das Register \codeline{rax} geladen werden. 
+In diesem Fall wird zunächst die Hexadezimalzahl \codeline{0x42} geladen und das Register \codeline{ah}, 
+welches ein 8 Bit Segment des 64 Bit \codeline{rax} Registers ist, inkrementiert. 
+In \codeline{rax} befindet sich nun die Hexadezimalzahl \codeline{0x142} bzw. die Dezimalzahl \codeline{322}. 
+Für den Syscall entspricht dieser Wert der Anweisung \codeline{execveat()}, 
+die über einen Dateipfad angegebene Programme ausführt. Um den Syscall durchführen zu können, benötigt \codeline{execveat()} noch fünf Argumente, 
+die über die Register \codeline{rdi}, \codeline{rdx}, \codeline{r10} und \codeline{r8} gesetzt werden. 
+In \codeline{rdi} wird die Zeichenfolge \codeline{("/bin//sh")} als Hexadezimalzahl kodiert geladen. 
+Zu beachten ist hierbei die invertierte Eingabe, da \codeline{execveat()} die Zeichenkette in Little Endian Reihenfolge erwartet. Das \codeline{rsp} Register, 
+also der Stack Pointer, 
+enthält nun einen Zeiger auf das \codeline{rdi} Register. Dieser Zeiger wird nun in das \codeline{rsi} Register geladen. Nun sind beide benötigten Argumente gesetzt. 
+Abschließend werden die übrigen Argumente auf \codeline{0} gesetzt. Hierfür wird zunächst das \codeline{rdx} Register 
+über \codeline{cqo} (convert word to quadword) auf \codeline{0} gesetzt und
+anschließend der Wert von \codeline{rdx} in die Register \codeline{r10} und \codeline{r8} geschoben. 
+Der Syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
 
 Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
