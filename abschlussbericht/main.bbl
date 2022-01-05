@@ -19,6 +19,117 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{wiki1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Morris (Computerwurm)}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
+      \endverb
+    \endentry
+    \entry{wiki2}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{SQL Slammer}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/SQL_Slammer
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/SQL_Slammer
+      \endverb
+    \endentry
+    \entry{whatsapp1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0ac99bdfe2d9c3365dca0c0d43bc4b05}{%
+           family={MacTechNews},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{fullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{bibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authorbibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authornamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \strng{authorfullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{Kritische Sicherheitslücke bei WhatsApp}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
+      \endverb
+      \verb{url}
+      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
+      \endverb
+    \endentry
+    \entry{hpvuln}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c54462eb625316645317e2600adc9cab}{%
+           family={Petzold},
+           familyi={P\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Gamestar}%
+      }
+      \strng{namehash}{c54462eb625316645317e2600adc9cab}
+      \strng{fullhash}{c54462eb625316645317e2600adc9cab}
+      \strng{bibnamehash}{c54462eb625316645317e2600adc9cab}
+      \strng{authorbibnamehash}{c54462eb625316645317e2600adc9cab}
+      \strng{authornamehash}{c54462eb625316645317e2600adc9cab}
+      \strng{authorfullhash}{c54462eb625316645317e2600adc9cab}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{HP-Drucker mit Sicherheitslücke}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.gamestar.de/artikel/hp-drucker-von-sicherheitsluecke-betroffen-hersteller-empfiehlt-firmware-update,3333316.html
+      \endverb
+      \verb{url}
+      \verb https://www.gamestar.de/artikel/hp-drucker-von-sicherheitsluecke-betroffen-hersteller-empfiehlt-firmware-update,3333316.html
+      \endverb
+    \endentry
     \entry{NISTSP}{misc}{}
       \name{author}{1}{}{%
         {{hash=780dc3aa8af36f5bdebed64017afec44}{%
@@ -39,8 +150,8 @@
       \strng{authorbibnamehash}{780dc3aa8af36f5bdebed64017afec44}
       \strng{authornamehash}{780dc3aa8af36f5bdebed64017afec44}
       \strng{authorfullhash}{780dc3aa8af36f5bdebed64017afec44}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{NIST SP 800-28 Version 2}
@@ -69,8 +180,8 @@
       \strng{authorbibnamehash}{f611cde69d8423f318c699777ba2bcdb}
       \strng{authornamehash}{f611cde69d8423f318c699777ba2bcdb}
       \strng{authorfullhash}{f611cde69d8423f318c699777ba2bcdb}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Encyclopedia of Cryptography and Security, Buffer Overflow Attacks}
@@ -101,8 +212,8 @@
       \strng{authorbibnamehash}{1124a8999aad75564488f6467521f248}
       \strng{authornamehash}{1124a8999aad75564488f6467521f248}
       \strng{authorfullhash}{1124a8999aad75564488f6467521f248}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{SVS-Masterprojekt IT-Sicherheit, Buffer-Overflow}
@@ -125,8 +236,8 @@
       \strng{authorbibnamehash}{3f07179a07b2a7661e37a3fd0e652a07}
       \strng{authornamehash}{3f07179a07b2a7661e37a3fd0e652a07}
       \strng{authorfullhash}{3f07179a07b2a7661e37a3fd0e652a07}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{What is buffer overflow?}
@@ -150,8 +261,8 @@
       \strng{authorbibnamehash}{1f25b8a9986a2e7a04ee9538c462e578}
       \strng{authornamehash}{1f25b8a9986a2e7a04ee9538c462e578}
       \strng{authorfullhash}{1f25b8a9986a2e7a04ee9538c462e578}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Buffer Overflow}
@@ -180,8 +291,8 @@
       \strng{authorbibnamehash}{d193c6006d897a01a6fb9ace7916e041}
       \strng{authornamehash}{d193c6006d897a01a6fb9ace7916e041}
       \strng{authorfullhash}{d193c6006d897a01a6fb9ace7916e041}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{4}
@@ -192,6 +303,63 @@
       \endverb
       \verb{url}
       \verb https://m.heise.de/security/artikel/Ein-Haufen-Risiko-270800.html?seite=all
+      \endverb
+    \endentry
+    \entry{tutorial1}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=bf0222b3b02d0f4ab5e4bc295543e202}{%
+           family={Hanna},
+           familyi={H\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \strng{fullhash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \strng{bibnamehash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \strng{authorbibnamehash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \strng{authornamehash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \strng{authorfullhash}{bf0222b3b02d0f4ab5e4bc295543e202}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{title}{Shellcode for Linux and Windows Tutorial}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb https://www.exploit-db.com/docs/english/13019-shell-code-for-beginners.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.exploit-db.com/docs/english/13019-shell-code-for-beginners.pdf
+      \endverb
+    \endentry
+    \entry{shellstorm}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7df25507921121e5a12d208414d58026}{%
+           family={ZadYree},
+           familyi={Z\bibinitperiod},
+           given={DaShrooms},
+           giveni={D\bibinitperiod},
+           suffix={vaelio},
+           suffixi={v\bibinitperiod}}}%
+      }
+      \strng{namehash}{7df25507921121e5a12d208414d58026}
+      \strng{fullhash}{7df25507921121e5a12d208414d58026}
+      \strng{bibnamehash}{7df25507921121e5a12d208414d58026}
+      \strng{authorbibnamehash}{7df25507921121e5a12d208414d58026}
+      \strng{authornamehash}{7df25507921121e5a12d208414d58026}
+      \strng{authorfullhash}{7df25507921121e5a12d208414d58026}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{29 bytes shellcode}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb http://shell-storm.org/shellcode/files/shellcode-905.php
+      \endverb
+      \verb{url}
+      \verb http://shell-storm.org/shellcode/files/shellcode-905.php
       \endverb
     \endentry
     \entry{owasp1}{misc}{}
@@ -207,8 +375,8 @@
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Buffer Overflow}
@@ -233,8 +401,8 @@
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Format String Attack}
@@ -244,86 +412,6 @@
       \endverb
       \verb{url}
       \verb https://owasp.org/www-community/attacks/Format_string_attack
-      \endverb
-    \endentry
-    \entry{wiki1}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=9c677286866aad38f8e9b660f5411814}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{title}{Morris (Computerwurm)}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
-      \endverb
-      \verb{url}
-      \verb https://de.wikipedia.org/wiki/Morris_(Computerwurm)
-      \endverb
-    \endentry
-    \entry{wiki2}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=9c677286866aad38f8e9b660f5411814}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{title}{SQL Slammer}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://de.wikipedia.org/wiki/SQL_Slammer
-      \endverb
-      \verb{url}
-      \verb https://de.wikipedia.org/wiki/SQL_Slammer
-      \endverb
-    \endentry
-    \entry{whatsapp1}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=0ac99bdfe2d9c3365dca0c0d43bc4b05}{%
-           family={MacTechNews},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \strng{fullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \strng{bibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \strng{authorbibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \strng{authornamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \strng{authorfullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{11}
-      \field{title}{Kritische Sicherheitslücke bei WhatsApp}
-      \field{year}{2019}
-      \verb{urlraw}
-      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
-      \endverb
-      \verb{url}
-      \verb https://www.mactechnews.de/news/article/Kritische-Sicherheitsluecke-bei-WhatsApp-Einfuehrung-von-Malware-per-MP4-Datei-moeglich-173830.html
       \endverb
     \endentry
     \entry{phrack}{misc}{}
@@ -377,7 +465,7 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{März}
+      \field{month}{3}
       \field{title}{Running a Buffer Overflow Attack}
       \field{year}{2016}
       \verb{urlraw}

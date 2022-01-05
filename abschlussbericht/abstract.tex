@@ -1,0 +1,28 @@
+\section{Abstract}
+Buffer Overflows gehören trotz ihres hohen Alters noch immer zu den relevantesten Schwachstellen in Computerprogrammen.
+Aus diesem Grund ist es unabdinglich für jeden, der sich im Feld der Software-Entwicklung oder IT-Sicherheit bewegt,
+ein grundlegendes Verständnis für Buffer Overflows aufzubauen. Ein Überblick über große und aktuelle Angriffe zeigt,
+wie verheerend die Auswirkungen einer solchen Schwachstelle sein können. Ein Buffer Overflow beschreibt im weitesten
+Sinne das “Überlaufen” eines Speicherbereiches durch unvorhergesehene Eingaben, wodurch Schadcode in einen laufenden
+Prozess injiziert und ausgeführt werden kann.
+
+Der vorliegende Projektbericht beschäftigt sich deshalb mit einer theoretisch-technischen Einführung sowie der praktischen
+Analyse von Buffer-Overflow-Schwachstellen. Um eine Grundlage für praktische Tests zu schaffen, wurden zunächst
+die Struktur und der Ablauf eines Programms im Speicher analysiert und theoretische Angriffsmöglichkeiten konstruiert.
+Anschließend wurde ein fiktives Angriffsszenario und ein verwundbares C-Programm entwickelt. Hierbei zeigte sich schnell,
+dass bereits die Nutzung von vermeintlich harmlosen Funktionen, wie \codeline{fprint()} oder \codeline{gets()}, schwerwiegende Auswirkungen
+auf die Sicherheit einer Applikation haben kann. Um die zuvor konstruierten Angriffstechniken real zu erproben und die
+Sicht eines Angreifers möglichst realistisch zu analysieren, wurde das verwundbare Programm anschließend im GNU-Debugger
+durchleuchtet. Dabei ließ sich klar erkennen, dass der Angreifer von einer Kopie des anzugreifenden Programms, oder sogar
+des Source Codes, profitiert. Mit dem aus dem Debugger erlangten Wissen wurde nun ein Exploit gebaut und in einer
+simulierten Server-Umgebung ausgeführt. Unter Zuhilfenahme eines injizierten Assembler Programms, konnte auf dem
+Zielsystem erfolgreich eine privilegierte Shell geöffnet werden.
+Abschließend wurde sich mit den wichtigsten
+Abwehrmechanismen auseinandergesetzt und es wurden “cutting-edge” Präventions-Mechanismen,
+wie statische Codeanalyse oder Canaries, untersucht. Hier zeigte sich klar,
+dass einem Angreifer die Arbeit zwar erschwert werden kann,
+Buffer Overflows jedoch nie vollständig verhindert werden können.
+
+Durch diese auf praktische Beispiele fokussierte Herangehensweise soll der Leser dieses Projektberichts die Thematik
+der Buffer Overflows besser verstehen und einen direkten Nutzen für seine Arbeit ziehen können.
+\pagebreak
