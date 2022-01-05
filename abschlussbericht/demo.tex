@@ -72,7 +72,7 @@ Außerdem können durch Eingabe von Formatierungsparametern Informationen, wie S
     \caption{Ausgegebene Speicheradressen}
 \end{figure}
 
-Das Programm weist also eine Stack basierte Buffer-Overflow- und eine Format-String-Schwachstelle auf.
+Das Programm weist also eine Stack basierte Buffer-Overflow- und eine Format-String-Schwachstelle auf. \cite{protostar}
 
 \subsection{Debugging}
 
@@ -109,7 +109,7 @@ lange Zeichenkette und geben sie in das Programm ein. Der darauf folgende Segmen
 dass der Instruction Pointer überschrieben wurde und nun auf eine ungültige Adresse zeigt. Im Debugger lassen wir
 uns den Inhalt des RIP-Registers ausgeben und suchen ihn in unserer generierten Zeichenkette. Wenn wir diesen und
 alle folgenden Zeichen jetzt aus unserer Kette löschen, so bleiben noch 264 Zeichen. Wir wissen also: Wenn wir unseren
-Buffer mit 264 Zeichen füllen, sind die darauf folgenden 8 Bytes der gesuchte Instruction Pointer.
+Buffer mit 264 Zeichen füllen, sind die darauf folgenden 8 Bytes der gesuchte Instruction Pointer. \cite{computerphile}
 
 \subsection{Exploit} \label{sec:explainersub}
 Mit diesem Wissen kann nun ein Exploit für das C-Programm geschrieben werden, mit dessen Hilfe beliebiger Shellcode
@@ -184,3 +184,5 @@ Nach dem Ausführen des Exploits wird aus dem Prozess eine Shell geöffnet, mit 
     \caption{Root Shell}
 \end{figure}
 Unsere Berechtigungen entsprechen dabei denen des Prozesses:
+
+\cite{computerphile} \cite{phrack}
