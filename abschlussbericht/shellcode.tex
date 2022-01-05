@@ -15,49 +15,35 @@ Es bestehen klare Unterschiede zwischen Linux- und Windows Shellcode: Unter Linu
 was unter Windows in der Regel nicht möglich ist. Im Folgenden wird ein Shellcode-Beispiel für 64Bit Unix Systeme betrachtet. \cite{tutorial1}
 
 \subsection{Beispiel}
+
+Das folgende Shellcode Beispiel ermöglicht es eine Shell auf dem ausführenden System zu öffnen und diese über eine Netzwerkverbindung fernzusteuern. 
+Der Code umfasst dabei lediglich 29 Bytes, da dieser meist so effizient und klein wie möglich sein sollte. 
+Am besten lässt sich die Erklärung von unten, also mit dem syscall, beginnen. 
+Dieser ermöglicht es auf unterschiedliche Funktionen des Betriebssystems zurückzugreifen und Befehle auszuführen. 
+Um die Art des syscalls festzulegen muss ein Ganzzahlwert in das Register rax geladen werden. 
+In diesem Fall wird zunächst die Hexadezimalzahl 0x42 geladen und das Register ah, welches ein 8 Bit Segment des 64 Bit rax Registers ist, inkrementiert. 
+In rax befindet sich nun die Hexadezimalzahl 0x142 bzw. die Dezimalzahl 322. Für den syscall entspricht dieser Wert der Anweisung execveat(), 
+die über einen Dateipfad angegebene Programme ausführt. Um den syscall durchführen zu können, benötigt execveat() noch 5 Argumente, 
+die über die Register rdi, rdx, r10 und r8 gesetzt werden. In rdi wird die Zeichenfolge ("/bin//sh") als Hexadezimalzahl kodiert geladen. 
+Zu beachten ist hierbei die invertierte Eingabe, da execveat() die Zeichenkette in Little Endian Reihenfolge erwartet. Das rsp Register, also der Stack Pointer, 
+enthält nun einen Zeiger auf das rdi Register. Dieser Zeiger wird nun in das rsi Register geladen. Nun sind beide benötigten Argumente gesetzt. 
+Abschließend werden die übrigen Argumente auf 0 gesetzt. Hierfür wird zunächst das rdx Register über cqo (convert word to quadword) auf 0 gesetzt und
+anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen.
+
+Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
+
+\begin{itemize}
+    \item \textbf{RAX}: 322 (Nummer des syscalls)
+    \item \textbf{RDI}: 0x68732f2f6e69622f (Pfad der auszuführenden Datei: "/bin//sh")
+    \item \textbf{RSI}: Pointer auf RDI (Zeiger auf den Pfad)
+    \item \textbf{RDX}: 0 (Optional, nicht verwendet)
+    \item \textbf{R10}: 0 (Optional, nicht verwendet)
+    \item \textbf{R8}:  0 (Optional, nicht verwendet)
+\end{itemize}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth,height=0.75\textheight,keepaspectratio]{images/shellstorm.png}
     \caption{Shellcode}
 \end{figure}
-
-%TODO: Einfügen aus DC
-%Struktur:
-%Der syscall wird abgeschickt, vorher müssen einige Werte gesetzt werden um execveat aufzurufen
-
-
-
-RAX -> system call number (322)
-RDI -> first argument (path)
-RSI -> second argument (pointer to path)
-RDX -> third argument (0)
-R10 -> fourth argument(0)
-R8 -> fifth argument(0)
-R9 -> sixth argument (not used) (Bearbeitet)
-
-
-Bei dem folgenden Bild sieht man ein Beispiel zu einem Shellcode der dann wenn man
-%!!!
-vorhat ausgeführt werden kann um ein System zu manipulieren.Dieses ist aber einfach
-gehalten um einen übersichtlicheren Blick zu bekommen. Daher sollte man hier von unten
-beginnen. Der System Call wird aufgerufen und geht an die Adresse im Register RAX.
-Dieser wurde mit der Hexadezimalzahl 0x42 belegt die auf den Stack gepusht
-war und durch das pop da eingespeichert wurde, wichtig hierbei ist dass,
-danach das Register ah was ein 8 Bit Teil vom 64 Bit Register RAX ist inkrementiert wird.
-Mit anderen Worten wird der Wert 0x42 zum Wert 0x142 dieser ist in
-Dezimalzahlen 322.Also geht der  System Call an die Nummer 322.
-Der nächste Schritt des Aufrufs ist es ans Register RDI zu gehen was das first
-argument enthält und den path darstellt. Im Code sehen wir das durch den
-Befehl movabs der String ("/bin//sh") als Hexadezimalzahl ins Register
-verschoben wird und danach durch den push Befehl auf dem Stack ist.
-Der dritte Schritt ist dass, der Aufruf sich das second argument anguckt
-was den Weg zum path hat und im Register RSI enthalten ist. Das besondere
-Register RSP oder auch stack pointer zeigt auf den Pfad der letzten Adresse
-in dem falle den von RDI und dieser Pfad wird in RSI gespeichert, daher die
-Befehle push RSP und pop RSI. Der Rest vom Code ist in diesem falle nicht so
-wichtig aber durch den Befehl cqo(convert word to Quadword) am Anfang wird das
-Register RDX auf null gesetzt und diesen Wert übernehmen dann auch die zwischen
-Register R8 und R10 durch den mov Befehl. Einen wirklichen nutzen hat dieser
-kleine 29 Byte große
-Shellcode nicht, aber er zeigt hervorragend wie man die Register mit dem der
-Kernel durch den System Call arbeitet man manipulieren kann. \cite{shellstorm}
+\cite{shellstorm}
