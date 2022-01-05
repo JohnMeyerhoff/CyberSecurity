@@ -26,3 +26,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{pie}%
+{%
+name={PIE},%
+sort={PIE},%
+type={acronym},%
+first={Position Independent Executable\glsspace (PIE)},%
+firstplural={Position Independent Executable\acrpluralsuffix \glsspace (PIE\acrpluralsuffix )},%
+text={PIE},%
+plural={PIE\acrpluralsuffix },%
+description={Position Independent Executable},%
+descriptionplural={Position Independent Executable\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Position Independent Executable},%
+longplural={Position Independent Executables},%
+short={PIE},%
+shortplural={PIEs},%
+counter={page},%
+parent={},%
+%
+}%
+

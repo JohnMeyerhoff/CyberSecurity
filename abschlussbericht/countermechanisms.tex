@@ -1,6 +1,6 @@
 \pagebreak
 \section{Gegenmaßnahmen}
-Wie in Abschnitt \ref{sec:explainersub} bereits aufgeführt,
+Wie in \autoref{sec:explainersub} bereits aufgeführt,
 gehören zu einem Buffer-Overflow-Angriff mehrere kombinierte Teile. Wenn
 man nun verhindern möchte, dass ein Programm über diesen Angriff gestürzt werden
 kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombination
@@ -60,12 +60,23 @@ die Ausführung des Programms abbrechen.
 %TODO: ASLR Beschreiben
 %ASLR wird ausgehebelt über Adress-Wissen
 %ref auf debugging
-\subsection{Address space layout randomization}
+\subsection{Address space layout randomization} \label{sec:aslr}
 \newacronym{aslr}{ASLR}{Address space layout randomization}
 Bei \acrlong{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
 auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
-\acrshort{aslr} ist leider wie in \ref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
+\acrshort{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
 bereits eine Adresse kennt.
+ASLR ist bei Linux eine im Kernel bereitgestellte Funktionalität.
+Wenn in \codeline{sysctl} die option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
+wird \acrshort{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \acrshort{aslr} 
+standardmäßig eingeschaltet.
+
+\newacronym{pie}{PIE}{Position Independent Executable}
+Compiler haben ein Pendant zu \acrshort{aslr} welches \acrlong{pie} oder kurz \acrshort{pie}
+genannt wird. So müssen also bei GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
+gesetzt werden. Dies führt dann dazu, dass das Kompilierte Programm auch tatsächlich an
+unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig
+ist.
 
 \subsection{Testen}
 Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit

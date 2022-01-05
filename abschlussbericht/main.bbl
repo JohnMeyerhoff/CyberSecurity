@@ -607,6 +607,35 @@
       \field{title}{Survey on Buffer Overflow Attacks and Countermeasures}
       \field{year}{2006}
     \endentry
+    \entry{aslrandrew}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=34ee7da1c9aec7c324956868cf8afd4e}{%
+           family={{Andrew Mallett}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Urban Penguin}%
+      }
+      \strng{namehash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \strng{fullhash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \strng{bibnamehash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \strng{authorbibnamehash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \strng{authornamehash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \strng{authorfullhash}{34ee7da1c9aec7c324956868cf8afd4e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Address Space Layout Randomization}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.theurbanpenguin.com/aslr-address-space-layout-randomization
+      \endverb
+      \verb{url}
+      \verb https://www.theurbanpenguin.com/aslr-address-space-layout-randomization
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
