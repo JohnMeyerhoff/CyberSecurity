@@ -22,3 +22,13 @@ execveat
 syscall
 Gerenderte
 Fuzzer
+Hexadezimalzahl
+Syscalls
+rax
+rdi
+rsi
+rdx
+Shellcoding
+inkrementiert
+rsp
+cqo

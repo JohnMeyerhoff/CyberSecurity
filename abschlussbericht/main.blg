@@ -1,15 +1,18 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'main.blg'
-[115] biber-MSWIN64:340> INFO - === 
-[153] Biber.pm:415> INFO - Reading 'main.bcf'
-[268] Biber.pm:952> INFO - Found 17 citekeys in bib section 0
-[283] Biber.pm:4340> INFO - Processing section 0
-[296] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[355] bibtex.pm:1689> INFO - LaTeX decoding ...
-[376] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[460] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[460] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[460] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[460] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[475] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[481] bbl.pm:757> INFO - Output to main.bbl
+[109] biber-darwin:340> INFO - === Wed Jan  5, 2022, 13:38:13
+[131] Biber.pm:415> INFO - Reading 'main.bcf'
+[248] Biber.pm:952> INFO - Found 21 citekeys in bib section 0
+[268] Biber.pm:4340> INFO - Processing section 0
+[283] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[285] bibtex.pm:1689> INFO - LaTeX decoding ...
+[311] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
+[393] Utils.pm:395> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Syscalls' and 'syscalls' in file 'bibliography.bib'
+[431] Utils.pm:395> WARN - I didn't find a database entry for 'Syscalls' (section 0)
+[468] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[468] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[468] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[468] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[489] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[503] bbl.pm:757> INFO - Output to main.bbl
+[503] Biber.pm:128> INFO - WARNINGS: 2

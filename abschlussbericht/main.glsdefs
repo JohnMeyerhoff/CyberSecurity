@@ -1,12 +1,14 @@
-\glsdefs@newdocentry{aslr}%
+\ifglsentryexists{aslr}{}%
+{%
+\gls@defglossaryentry{aslr}%
 {%
 name={ASLR},%
 sort={ASLR},%
 type={acronym},%
 first={Address space layout randomization\glsspace (ASLR)},%
-firstplural={Address space layout randomization\acrpluralsuffix \glsspace (ASLR\acrpluralsuffix )},%
+firstplural={Address space layout randomizations\glsspace (ASLRs)},%
 text={ASLR},%
-plural={ASLR\acrpluralsuffix },%
+plural={ASLRs},%
 description={Address space layout randomization},%
 descriptionplural={Address space layout randomization\acrpluralsuffix },%
 symbol={\relax },%
@@ -25,4 +27,4 @@ counter={page},%
 parent={},%
 %
 }%
-
+}%

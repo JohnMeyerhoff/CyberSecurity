@@ -4,7 +4,7 @@ Wie in Abschnitt \ref{sec:explainersub} bereits aufgeführt,
 gehören zu einem Buffer-Overflow-Angriff mehrere kombinierte Teile. Wenn
 man nun verhindern möchte, dass ein Programm über diesen Angriff gestürzt werden
 kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombination
-zu blockieren. Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
+zu blockieren. \cite{Werthmann2006SurveyOB} Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
 \subsection{Übersicht der Maßnahmen}
 Low-Level:
 \begin{itemize}
@@ -66,12 +66,6 @@ Bei \acrlong{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu ersc
 auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
 \acrshort{aslr} ist leider wie in \ref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
 bereits eine Adresse kennt.
-
-\subsection{Code-Beispiel}
-\begin{center}
-    %TODO: Besseres Beispiel finden.
-    \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/Libverify.png}
-\end{center}
 
 \subsection{Testen}
 Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit

@@ -19,6 +19,32 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{owasptop}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=24b95a7fdad5a850196cd87546dcc70b}{%
+           family={OWASP},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{fullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{bibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{OWASP Top 10 Desktop Application Security Risks}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://owasp.org/www-project-desktop-app-security-top-10/#da8
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-project-desktop-app-security-top-10/#da8
+      \endverb
+    \endentry
     \entry{wiki1}{misc}{}
       \name{author}{1}{}{%
         {{hash=9c677286866aad38f8e9b660f5411814}{%
@@ -32,8 +58,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -59,8 +85,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -85,8 +111,8 @@
       \strng{authorbibnamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
       \strng{authornamehash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
       \strng{authorfullhash}{0ac99bdfe2d9c3365dca0c0d43bc4b05}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{11}
@@ -116,8 +142,8 @@
       \strng{authorbibnamehash}{c54462eb625316645317e2600adc9cab}
       \strng{authornamehash}{c54462eb625316645317e2600adc9cab}
       \strng{authorfullhash}{c54462eb625316645317e2600adc9cab}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{8}
@@ -150,8 +176,8 @@
       \strng{authorbibnamehash}{780dc3aa8af36f5bdebed64017afec44}
       \strng{authornamehash}{780dc3aa8af36f5bdebed64017afec44}
       \strng{authorfullhash}{780dc3aa8af36f5bdebed64017afec44}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{NIST SP 800-28 Version 2}
@@ -180,8 +206,8 @@
       \strng{authorbibnamehash}{f611cde69d8423f318c699777ba2bcdb}
       \strng{authornamehash}{f611cde69d8423f318c699777ba2bcdb}
       \strng{authorfullhash}{f611cde69d8423f318c699777ba2bcdb}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Encyclopedia of Cryptography and Security, Buffer Overflow Attacks}
@@ -194,26 +220,34 @@
       \endverb
     \endentry
     \entry{hamburg}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=1124a8999aad75564488f6467521f248}{%
-           family={Konstantin\bibnamedelima Schleser},
-           familyi={K\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={Denis\bibnamedelima Graf},
-           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod},
-           suffix={Tim\bibnamedelima Krämer},
-           suffixi={T\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      \name{author}{3}{}{%
+        {{hash=a7fb8fea4e1bb906e60f25832be7aecf}{%
+           family={Schleser},
+           familyi={S\bibinitperiod},
+           given={Konstantin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=1fec9e18e4456e146da8ea7b4f1ac762}{%
+           family={Krämer},
+           familyi={K\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=58fbf4bfdfb17530534b6c950e14c13b}{%
+           family={Graf},
+           familyi={G\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Universität Hamburg}%
       }
-      \strng{namehash}{1124a8999aad75564488f6467521f248}
-      \strng{fullhash}{1124a8999aad75564488f6467521f248}
-      \strng{bibnamehash}{1124a8999aad75564488f6467521f248}
-      \strng{authorbibnamehash}{1124a8999aad75564488f6467521f248}
-      \strng{authornamehash}{1124a8999aad75564488f6467521f248}
-      \strng{authorfullhash}{1124a8999aad75564488f6467521f248}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \strng{namehash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \strng{fullhash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \strng{bibnamehash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \strng{authorbibnamehash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \strng{authornamehash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \strng{authorfullhash}{86f7895d95f6d3a1bd1622bf5192170c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{SVS-Masterprojekt IT-Sicherheit, Buffer-Overflow}
@@ -236,8 +270,8 @@
       \strng{authorbibnamehash}{3f07179a07b2a7661e37a3fd0e652a07}
       \strng{authornamehash}{3f07179a07b2a7661e37a3fd0e652a07}
       \strng{authorfullhash}{3f07179a07b2a7661e37a3fd0e652a07}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{What is buffer overflow?}
@@ -261,8 +295,8 @@
       \strng{authorbibnamehash}{1f25b8a9986a2e7a04ee9538c462e578}
       \strng{authornamehash}{1f25b8a9986a2e7a04ee9538c462e578}
       \strng{authorfullhash}{1f25b8a9986a2e7a04ee9538c462e578}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Buffer Overflow}
@@ -333,22 +367,47 @@
       \verb https://www.exploit-db.com/docs/english/13019-shell-code-for-beginners.pdf
       \endverb
     \endentry
+    \entry{execman}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=ec52668cf97d3e4b041c73fab742c2c0}{%
+           family={page},
+           familyi={p\bibinitperiod},
+           given={Linux},
+           giveni={L\bibinitperiod},
+           prefix={manual},
+           prefixi={m\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \strng{fullhash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \strng{bibnamehash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \strng{authorbibnamehash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \strng{authornamehash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \strng{authorfullhash}{ec52668cf97d3e4b041c73fab742c2c0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{execveat(2)}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://man7.org/linux/man-pages/man2/execveat.2.html
+      \endverb
+      \verb{url}
+      \verb https://man7.org/linux/man-pages/man2/execveat.2.html
+      \endverb
+    \endentry
     \entry{shellstorm}{misc}{}
       \name{author}{1}{}{%
-        {{hash=7df25507921121e5a12d208414d58026}{%
-           family={ZadYree},
-           familyi={Z\bibinitperiod},
-           given={DaShrooms},
-           giveni={D\bibinitperiod},
-           suffix={vaelio},
-           suffixi={v\bibinitperiod}}}%
+        {{hash=47867b0645f87009e789b5e929300849}{%
+           family={{ZadYree, vaelio, DaShrooms}},
+           familyi={Z\bibinitperiod}}}%
       }
-      \strng{namehash}{7df25507921121e5a12d208414d58026}
-      \strng{fullhash}{7df25507921121e5a12d208414d58026}
-      \strng{bibnamehash}{7df25507921121e5a12d208414d58026}
-      \strng{authorbibnamehash}{7df25507921121e5a12d208414d58026}
-      \strng{authornamehash}{7df25507921121e5a12d208414d58026}
-      \strng{authorfullhash}{7df25507921121e5a12d208414d58026}
+      \strng{namehash}{47867b0645f87009e789b5e929300849}
+      \strng{fullhash}{47867b0645f87009e789b5e929300849}
+      \strng{bibnamehash}{47867b0645f87009e789b5e929300849}
+      \strng{authorbibnamehash}{47867b0645f87009e789b5e929300849}
+      \strng{authornamehash}{47867b0645f87009e789b5e929300849}
+      \strng{authorfullhash}{47867b0645f87009e789b5e929300849}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -374,7 +433,7 @@
       \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
-      \field{extraname}{1}
+      \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -400,7 +459,7 @@
       \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -412,67 +471,6 @@
       \endverb
       \verb{url}
       \verb https://owasp.org/www-community/attacks/Format_string_attack
-      \endverb
-    \endentry
-    \entry{phrack}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=a9f65d6acef76198df58244d36bbcc4e}{%
-           family={One},
-           familyi={O\bibinitperiod},
-           given={Aleph},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {PHRACK}%
-      }
-      \strng{namehash}{a9f65d6acef76198df58244d36bbcc4e}
-      \strng{fullhash}{a9f65d6acef76198df58244d36bbcc4e}
-      \strng{bibnamehash}{a9f65d6acef76198df58244d36bbcc4e}
-      \strng{authorbibnamehash}{a9f65d6acef76198df58244d36bbcc4e}
-      \strng{authornamehash}{a9f65d6acef76198df58244d36bbcc4e}
-      \strng{authorfullhash}{a9f65d6acef76198df58244d36bbcc4e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Smashing the Stack For Fun And Profit}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb http://phrack.org/issues/49/14.html#article
-      \endverb
-      \verb{url}
-      \verb http://phrack.org/issues/49/14.html#article
-      \endverb
-    \endentry
-    \entry{computerphile}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=dc127e7dadeee2cba228e20c7e1c6b85}{%
-           family={Pound},
-           familyi={P\bibinitperiod},
-           given={Asst.\bibnamedelimi Prof.\bibnamedelimi Dr.\bibnamedelimi Mike},
-           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {University of Nottingham, Computerphile}%
-      }
-      \strng{namehash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \strng{fullhash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \strng{bibnamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \strng{authorbibnamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \strng{authornamehash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \strng{authorfullhash}{dc127e7dadeee2cba228e20c7e1c6b85}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{3}
-      \field{title}{Running a Buffer Overflow Attack}
-      \field{year}{2016}
-      \verb{urlraw}
-      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
-      \endverb
-      \verb{url}
-      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
       \endverb
     \endentry
     \entry{protostar}{misc}{}
@@ -500,7 +498,91 @@
       \verb https://exploit.education/
       \endverb
     \endentry
+    \entry{computerphile}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=28eb784a4dcce29d8a10664a1532e826}{%
+           family={{Asst. Prof. Dr. Mike Pound}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Nottingham, Computerphile}%
+      }
+      \strng{namehash}{28eb784a4dcce29d8a10664a1532e826}
+      \strng{fullhash}{28eb784a4dcce29d8a10664a1532e826}
+      \strng{bibnamehash}{28eb784a4dcce29d8a10664a1532e826}
+      \strng{authorbibnamehash}{28eb784a4dcce29d8a10664a1532e826}
+      \strng{authornamehash}{28eb784a4dcce29d8a10664a1532e826}
+      \strng{authorfullhash}{28eb784a4dcce29d8a10664a1532e826}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{Running a Buffer Overflow Attack}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=1S0aBV-Waeo
+      \endverb
+    \endentry
+    \entry{phrack}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=7285f0c30cccf7a5b983549543340606}{%
+           family={{Aleph One}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PHRACK}%
+      }
+      \strng{namehash}{7285f0c30cccf7a5b983549543340606}
+      \strng{fullhash}{7285f0c30cccf7a5b983549543340606}
+      \strng{bibnamehash}{7285f0c30cccf7a5b983549543340606}
+      \strng{authorbibnamehash}{7285f0c30cccf7a5b983549543340606}
+      \strng{authornamehash}{7285f0c30cccf7a5b983549543340606}
+      \strng{authorfullhash}{7285f0c30cccf7a5b983549543340606}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Smashing the Stack For Fun And Profit}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb http://phrack.org/issues/49/14.html#article
+      \endverb
+      \verb{url}
+      \verb http://phrack.org/issues/49/14.html#article
+      \endverb
+    \endentry
+    \entry{Werthmann2006SurveyOB}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d83a2090372c7dc412d490aa880e3d84}{%
+           family={Werthmann},
+           familyi={W\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=479cf6b936f355744e594a8e3b1559ae}{%
+           family={Görtz},
+           familyi={G\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1c601bd53b40cd68afbf843a1184a91}
+      \strng{fullhash}{e1c601bd53b40cd68afbf843a1184a91}
+      \strng{bibnamehash}{e1c601bd53b40cd68afbf843a1184a91}
+      \strng{authorbibnamehash}{e1c601bd53b40cd68afbf843a1184a91}
+      \strng{authornamehash}{e1c601bd53b40cd68afbf843a1184a91}
+      \strng{authorfullhash}{e1c601bd53b40cd68afbf843a1184a91}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Survey on Buffer Overflow Attacks and Countermeasures}
+      \field{year}{2006}
+    \endentry
   \enddatalist
+  \missing{Syscalls}
 \endrefsection
 \endinput
 

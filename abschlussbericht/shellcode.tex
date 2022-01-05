@@ -18,19 +18,19 @@ was unter Windows in der Regel nicht möglich ist. Im Folgenden wird ein Shellco
 
 Das folgende Shellcode Beispiel ermöglicht es eine Shell auf dem ausführenden System zu öffnen und diese über eine Netzwerkverbindung fernzusteuern. 
 Der Code umfasst dabei lediglich 29 Bytes, da dieser meist so effizient und klein wie möglich sein sollte. 
-Am besten lässt sich die Erklärung von unten, also mit dem syscall, beginnen. 
+Am besten lässt sich die Erklärung von unten, also mit dem Syscall, beginnen. 
 Dieser ermöglicht es auf unterschiedliche Funktionen des Betriebssystems zurückzugreifen und Befehle auszuführen. 
-Um die Art des syscalls festzulegen muss ein Ganzzahlwert in das Register rax geladen werden. 
+Um die Art des Syscalls festzulegen muss eine Ganzzahl in das Register rax geladen werden. 
 In diesem Fall wird zunächst die Hexadezimalzahl 0x42 geladen und das Register ah, welches ein 8 Bit Segment des 64 Bit rax Registers ist, inkrementiert. 
-In rax befindet sich nun die Hexadezimalzahl 0x142 bzw. die Dezimalzahl 322. Für den syscall entspricht dieser Wert der Anweisung execveat(), 
-die über einen Dateipfad angegebene Programme ausführt. Um den syscall durchführen zu können, benötigt execveat() noch 5 Argumente, 
+In rax befindet sich nun die Hexadezimalzahl 0x142 bzw. die Dezimalzahl 322. Für den Syscall entspricht dieser Wert der Anweisung execveat(), 
+die über einen Dateipfad angegebene Programme ausführt. Um den Syscall durchführen zu können, benötigt execveat() noch 5 Argumente, 
 die über die Register rdi, rdx, r10 und r8 gesetzt werden. In rdi wird die Zeichenfolge ("/bin//sh") als Hexadezimalzahl kodiert geladen. 
 Zu beachten ist hierbei die invertierte Eingabe, da execveat() die Zeichenkette in Little Endian Reihenfolge erwartet. Das rsp Register, also der Stack Pointer, 
 enthält nun einen Zeiger auf das rdi Register. Dieser Zeiger wird nun in das rsi Register geladen. Nun sind beide benötigten Argumente gesetzt. 
 Abschließend werden die übrigen Argumente auf 0 gesetzt. Hierfür wird zunächst das rdx Register über cqo (convert word to quadword) auf 0 gesetzt und
-anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
+anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der Syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{Syscalls} \cite{execman}
 
-Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
+Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
 \begin{figure}[h]
     \centering
@@ -39,10 +39,10 @@ Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
 \end{figure}
 \cite{shellstorm}
 
-Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
+Die verwendeten Register und ihr Inhalt zum Zeitpunkt des Syscalls:
 
 \begin{itemize}
-    \item \textbf{RAX}: 322 (Nummer des syscalls)
+    \item \textbf{RAX}: 322 (Nummer des Syscalls)
     \item \textbf{RDI}: 0x68732f2f6e69622f (Pfad der auszuführenden Datei: "/bin//sh")
     \item \textbf{RSI}: Pointer auf RDI (Zeiger auf den Pfad)
     \item \textbf{RDX}: 0 (Optional, nicht verwendet)
