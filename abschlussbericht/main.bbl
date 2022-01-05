@@ -636,6 +636,35 @@
       \verb https://www.theurbanpenguin.com/aslr-address-space-layout-randomization
       \endverb
     \endentry
+    \entry{sanitize}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c2f0039b9a0105fc0d3a9c22ea24b1c0}{%
+           family={GOOGLE},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {GOOGLE}%
+      }
+      \strng{namehash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \strng{fullhash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \strng{bibnamehash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \strng{authorbibnamehash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \strng{authornamehash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \strng{authorfullhash}{c2f0039b9a0105fc0d3a9c22ea24b1c0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{Sanitizers}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/google/sanitizers/wiki
+      \endverb
+      \verb{url}
+      \verb https://github.com/google/sanitizers/wiki
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

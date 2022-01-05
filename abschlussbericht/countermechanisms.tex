@@ -14,12 +14,13 @@ Low-Level:
 Passive Härtung der Programme:
 \begin{itemize}
     \item C Range Error Detector und Out Of Bounds Object
-    \item Safe Pointer Instrumentalisierung
-    \item Manuelles Buffer-Overflow Blocken (Input-Bereinigung)
+    \item Address space layout randomization
+    %\item Safe Pointer Instrumentalisierung wäre zu viel https://download.vusec.net/papers/delta-pointers_eurosys18.pdf
+    \item Manuelles Buffer Overflow Blocken (Input-Bereinigung)
 \end{itemize}
 Aktive (Analysierende) Lösungen:
 \begin{itemize}
-    \item Statische Code-Analyse
+    \item Statische Analyse
     \item Stack-Schutz mit ``Canary'' (Zufallszahl)
 \end{itemize}
 
@@ -34,7 +35,7 @@ Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
 ist. Leider ist es Praktisch nicht umsetzbar, in einer Hardwarelösung
 zu entscheiden, welcher Buffer-Overflow böswillig ist.
 
-\subsection{Out Of Bounds Object}
+\subsection{C Range Error Detector und Out Of Bounds Object}
 Ein Out Of Bounds Object ist eine Vereinfachte Lösung um Referenzen ungefährlich zu machen.
 Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem Jede
 Adresse welche nicht im spezifizierten Bereich liegt auf ein bestimmtes Objekt, das sogenannte
@@ -50,7 +51,7 @@ ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
 Projekten die Aussage, dass keine Schwachstellen mehr vorhanden seien
 unmöglich zu treffen.
 
-\subsection{Canaries}
+\subsection{Stack-Schutz mit Canaries} \label{sec:canaries}
 Die Bezeichnung Canary (Engl. Kanarienvogel) stammt aus dem Gebrauch der Kanarienvögel als
 Indikator für Gas in Mienen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
 dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem Buffer-Overflow-Angriff
@@ -61,22 +62,39 @@ die Ausführung des Programms abbrechen.
 %ASLR wird ausgehebelt über Adress-Wissen
 %ref auf debugging
 \subsection{Address space layout randomization} \label{sec:aslr}
-\newacronym{aslr}{ASLR}{Address space layout randomization}
-Bei \acrlong{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
+Bei \gls{aslr} geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
 auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
-\acrshort{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
+\gls{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
 bereits eine Adresse kennt.
 ASLR ist bei Linux eine im Kernel bereitgestellte Funktionalität.
 Wenn in \codeline{sysctl} die option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
-wird \acrshort{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \acrshort{aslr} 
+wird \gls{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \gls{aslr} 
 standardmäßig eingeschaltet.
+Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
+zufällig gewählt, sodass wichtige Komponenten wie beispielsweise die
+Prüfung einer Lizenz nicht immer am gleichen Offset liegen. Dann könnte ein Angreifer
+mit dem Wissen über die Speicheradresse des Programms die Speicheradresse beliebiger
+Komponenten zuverlässig errechnen und erreichen.
 
-\newacronym{pie}{PIE}{Position Independent Executable}
-Compiler haben ein Pendant zu \acrshort{aslr} welches \acrlong{pie} oder kurz \acrshort{pie}
+Compiler haben ein Pendant zu \gls{aslr} welches \gls{pie}
 genannt wird. So müssen also bei GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
 gesetzt werden. Dies führt dann dazu, dass das Kompilierte Programm auch tatsächlich an
 unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig
 ist.
+Nach dem gleichen Konzept ist es dann einem Angreifer nicht ohne weiteres möglich, die
+Speicheradressen der Komponenten eines Programms zu wissen da diese Abhängig
+von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
+so sind nun Alle Adressen zufällig und nicht voneinander abhängig.
+
+\subsection{Manuelles Buffer Overflow Blocken}
+Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben
+welche er entgegennimmt zuerst filtert und dann validiert. Leider funktioniert
+dies nicht immer zuverlässig und ist für manche Angriffsvektoren schlichtweg nicht
+möglich, da es teilweise nichts gibt um zwischen normaler und böswilliger Anfrage zu
+unterscheiden. Es ist aber dennoch hilfreich die sogenannte Input Sanitization einzubauen.
+Input Sanitization befasst sich grundlegend damit, dass infizierte Eingaben desinfiziert
+werden, sodass im schlimmsten fall eine semantisch inkorrekte Eingaben weiterverarbeitet
+werden, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} 
 
 \subsection{Testen}
 Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
