@@ -1,10 +1,18 @@
 \pagebreak
 \section{Gegenmaßnahmen}
+Da bei einem Angriff durch Buffer Overflow mit der richtigen Payload
+ein Shellcode ausgeführt werden kann welcher dann eine Root Shell
+offnen kann, gehören
+Buffer Overflow angriffe zu den Gefährlichsten.
+
+Ziel eines jeden Entwicklers sollte es also sein, diese Angriffe bestmöglich
+zu verhindern.
 Wie in \autoref{sec:explainersub} bereits aufgeführt,
 gehören zu einem Buffer-Overflow-Angriff mehrere kombinierte Teile. Wenn
 man nun verhindern möchte, dass ein Programm über diesen Angriff gestürzt werden
 kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombination
-zu blockieren. \cite{Werthmann2006SurveyOB} Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
+zu blockieren. \cite{Werthmann2006SurveyOB}\\
+Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
 \subsection{Übersicht der Maßnahmen}
 Low-Level:
 \begin{itemize}
@@ -33,30 +41,66 @@ Entwickler gewünschte Overflows verhindert, sodass Programme nicht mehr
 ordentlich funktionieren. Manchmal wird aus gründen der Effizienz ein
 Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
 ist. Leider ist es Praktisch nicht umsetzbar, in einer Hardwarelösung
-zu entscheiden, welcher Buffer-Overflow böswillig ist.
+zu entscheiden, welcher Buffer-Overflow böswillig ist. Damit ist dieser Ansatz
+nicht Praktikabel.
 
 \subsection{C Range Error Detector und Out Of Bounds Object}
 Ein Out Of Bounds Object ist eine Vereinfachte Lösung um Referenzen ungefährlich zu machen.
 Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem Jede
 Adresse welche nicht im spezifizierten Bereich liegt auf ein bestimmtes Objekt, das sogenannte
-"Out Of Bounds Object" verweist. Dadurch kann innerhalb des laufenden Programms erkannt werden, das
+``Out Of Bounds Object'' verweist. Dadurch kann innerhalb des laufenden Programms erkannt werden, das
 etwas falsch gelaufen ist. Diese Methode ist nicht gängig, da sie technisch gesehen
 umgangen werden kann, solange der Angreifer weiß, welcher Speicherbereich für das Programm
 vorgesehen ist.
 
-\subsection{Statische Analyse}
+
+
+\subsection{Testen}
+Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
+und Robustheit zu testen. Diese beiden Qualitätsmerkmale sind vor Allem
+im Bezug zu Buffer-Overflows am wichtigsten. Wartbarkeit und Erweiterbarkeit
+sind langfristig auch zu beachten, da es bei Änderungen am Quellcode
+zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
+Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
+werden.
+Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
+zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine
+potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
+von einem sogenannten Fuzzer erstellt werden.
+Als Alternative zum Fuzzing gibt es Spezifische Payloads und
+Escape-Sequenzen welche - auch automatisiert - getestet werden können.
+
+\subsubsection{Statische Analyse}
 Wenn das Programm bereits vor der Ausführung analysiert wird, kann ein
 Tool bestimmen, an welchen stellen Schwachstellen vorhanden sind und
 ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
 Projekten die Aussage, dass keine Schwachstellen mehr vorhanden seien
-unmöglich zu treffen.
+unmöglich zu treffen. Daher ist dieser Ansatz nimmt recht wenig Zeit in Anspruch
+aber durch die fehlende finale Gewissheit ist der Ansatz alleine nicht ausreichend.
+
+
+\subsubsection{Bug Bounty Programme} \label{sec:bounties}
+Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
+Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
+wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung)
+um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche art des Zugriffes
+der Angriff ermöglicht.
+
+Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
+Buffer Overflow mit der richtigen Payload ein Shellcode ausgeführt werden kann welcher dann das
+höchste Ziel bei einem Angriff - eine Root Shell - erzielt.
+Diese hohe Zugriffsstufe macht einen Buffer Overflow angriff immer zum Attraktivsten Angriffsvektor,
+falls mehrere Schwachstellen einer Software bekannt sind. Sind mehrere Schwachstellen bekannt, ist die
+Version aber meist veraltet. 
+
 
 \subsection{Stack-Schutz mit Canaries} \label{sec:canaries}
 Die Bezeichnung Canary (Engl. Kanarienvogel) stammt aus dem Gebrauch der Kanarienvögel als
 Indikator für Gas in Mienen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
 dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem Buffer-Overflow-Angriff
 überschrieben werden. Ein Tool wie StackGuard kann in diesem Fall anhand der Änderung einen Fehler feststellen und
-die Ausführung des Programms abbrechen.
+die Ausführung des Programms abbrechen. Dies stellt offensichtlich eine effektive Möglichkeit dar,
+Buffer Overflows zu erkennen. 
 
 %TODO: ASLR Beschreiben
 %ASLR wird ausgehebelt über Adress-Wissen
@@ -68,8 +112,8 @@ auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
 bereits eine Adresse kennt.
 ASLR ist bei Linux eine im Kernel bereitgestellte Funktionalität.
 Wenn in \codeline{sysctl} die option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
-wird \gls*{aslr}  nicht verwendet. \cite{aslrandrew} In neueren Distributionen ist \gls*{aslr} 
-standardmäßig eingeschaltet.
+wird \gls*{aslr}  nicht verwendet. \cite{aslrandrew} \\
+In neueren Distributionen ist \gls*{aslr} standardmäßig eingeschaltet.
 Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
 zufällig gewählt, sodass wichtige Komponenten wie beispielsweise die
 Prüfung einer Lizenz nicht immer am gleichen Offset liegen. Dann könnte ein Angreifer
@@ -94,36 +138,8 @@ möglich, da es teilweise nichts gibt um zwischen normaler und böswilliger Anfr
 unterscheiden. Es ist aber dennoch hilfreich die sogenannte Input Sanitization einzubauen.
 Input Sanitization befasst sich grundlegend damit, dass infizierte Eingaben desinfiziert
 werden, sodass im schlimmsten fall eine semantisch inkorrekte Eingaben weiterverarbeitet
-werden, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} 
-
-\subsection{Testen}
-Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
-und Robustheit zu testen. Diese beiden Qualitätsmerkmale sind vor Allem
-im Bezug zu Buffer-Overflows am wichtigsten. Wartbarkeit und Erweiterbarkeit
-sind langfristig auch zu beachten, da es bei Änderungen am Quellcode
-zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
-Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
-werden.
-Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
-zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine
-potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
-von einem sogenannten Fuzzer erstellt werden.
-Als Alternative zum Fuzzing gibt es Spezifische Payloads und
-Escape-Sequenzen welche - auch automatisiert - getestet werden können.
-
-\subsubsection{Bug Bounty Programme} \label{sec:bounties}
-Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
-Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
-wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung)
-um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche art des Zugriffes
-der Angriff ermöglicht.
-
-Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
-Buffer Overflow mit der richtigen Payload ein Shellcode ausgeführt werden kann welcher dann das
-höchste Ziel bei einem Angriff - eine Root Shell - erzielt.
-Diese hohe Zugriffsstufe macht einen Buffer Overflow angriff immer zum Attraktivsten Angriffsvektor,
-falls mehrere Schwachstellen einer Software bekannt sind. Sind mehrere Schwachstellen bekannt, ist die
-Version aber meist veraltet. 
+werden, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} \\
+Dadurch ist dieser Ansatz sehr effektiv aber dafür auch sehr aufwändig.
 
 
 
