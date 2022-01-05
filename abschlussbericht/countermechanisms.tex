@@ -1,18 +1,16 @@
 \pagebreak
 \section{Gegenmaßnahmen}
-Da bei einem Angriff durch Buffer Overflow mit der richtigen Payload
-ein Shellcode ausgeführt werden kann welcher dann eine Root Shell
-offnen kann, gehören
-Buffer Overflow angriffe zu den Gefährlichsten.
+Da sich einem Angriff durch Buffer Overflow mit der passenden Payload
+ein Shellcode ausführen lässt, welcher dann eine Root Shell
+öffnen kann, gehören
+Buffer-Overflow-Angriffe zu den gefährlichsten.
 
-Ziel eines jeden Entwicklers sollte es also sein, diese Angriffe bestmöglich
-zu verhindern.
 Wie in \autoref{sec:explainersub} bereits aufgeführt,
 gehören zu einem Buffer-Overflow-Angriff mehrere kombinierte Teile. Wenn
-man nun verhindern möchte, dass ein Programm über diesen Angriff gestürzt werden
-kann, so hat man mehrere Möglichkeiten diese Teile aufzuhalten oder die Kombination
-zu blockieren. \cite{Werthmann2006SurveyOB}\\
-Es folgen mehrere Möglichkeiten, grob nach Aufwand (für den Entwickler) sortiert.
+man nun verhindern möchte, dass ein Programm über diesen Angriff kompromittiert wird, 
+so hat man mehrere Möglichkeiten, diese Teile oder ihre Kombination aufzuhalten. \cite{Werthmann2006SurveyOB}\\
+
+Es folgen mehrere Optionen, grob nach Aufwand (für den Entwickler) sortiert.
 \subsection{Übersicht der Maßnahmen}
 Low-Level:
 \begin{itemize}
@@ -24,122 +22,117 @@ Passive Härtung der Programme:
     \item C Range Error Detector und Out Of Bounds Object
     \item Address Space Layout Randomization
     %\item Safe Pointer Instrumentalisierung wäre zu viel https://download.vusec.net/papers/delta-pointers_eurosys18.pdf
-    \item Manuelles Buffer Overflow Blocken (Input-Bereinigung)
+    \item Manuelles Buffer-Overflow-Blocken (Input-Bereinigung)
 \end{itemize}
-Aktive (Analysierende) Lösungen:
+Aktive (analysierende) Lösungen:
 \begin{itemize}
     \item Statische Analyse
-    \item Stack-Schutz mit ``Canary'' (Zufallszahl)
+    \item Stack-Schutz mit ''Canary'' (Zufallszahl)
 \end{itemize}
 
 \subsection{Low-Level-Probleme}
-Sowohl Hardwarelösungen als auch Betriebssystembasierte Lösungen haben
-das grundlegende Problem, dass die Verhinderung von Buffer-Overflows zu
+Sowohl Hardwarelösungen als auch betriebssystembasierte Lösungen haben
+das grundlegende Problem, dass die Verhinderung von Buffer Overflows zu
 ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
-jegliche Overflows zu verhindern - dabei werden jedoch auch vom
-Entwickler gewünschte Overflows verhindert, sodass Programme nicht mehr
-ordentlich funktionieren. Manchmal wird aus gründen der Effizienz ein
+jegliche Overflows zu verhindern - dabei können jedoch auch vom
+Entwickler gewünschte Overflows blockiert werden, sodass Programme nicht mehr
+ordnungsgemäß funktionieren. Manchmal wird aus Gründen der Effizienz ein
 Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
-ist. Leider ist es Praktisch nicht umsetzbar, in einer Hardwarelösung
-zu entscheiden, welcher Buffer-Overflow böswillig ist. Damit ist dieser Ansatz
-nicht Praktikabel.
+geschieht. Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
+zu unterscheiden, welcher Buffer Overflow böswillig und welcher gewollt ist. 
+Damit ist dieser Ansatz nicht praktikabel.
+\pagebreak
 
 \subsection{C Range Error Detector und Out Of Bounds Object}
-Ein Out Of Bounds Object ist eine Vereinfachte Lösung um Referenzen ungefährlich zu machen.
-Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem Jede
-Adresse welche nicht im spezifizierten Bereich liegt auf ein bestimmtes Objekt, das sogenannte
-``Out Of Bounds Object'' verweist. Dadurch kann innerhalb des laufenden Programms erkannt werden, das
-etwas falsch gelaufen ist. Diese Methode ist nicht gängig, da sie technisch gesehen
-umgangen werden kann, solange der Angreifer weiß, welcher Speicherbereich für das Programm
+Ein Out Of Bounds Object ist eine vereinfachte Lösung, um Referenzen ungefährlich zu machen.
+Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem jede
+Adresse, welche nicht im spezifizierten Bereich liegt, auf ein bestimmtes Objekt, das sogenannte
+''Out Of Bounds Object'' verweist. Diese Methode ist nicht gängig, da sie leicht
+umgangen werden kann, sofern der Angreifer weiß, welcher Speicherbereich für das Programm
 vorgesehen ist.
 
 
 
 \subsection{Testen}
-Es gibt mehrere Möglichkeiten um kompilierte Programme auf ihre Sicherheit
-und Robustheit zu testen. Diese beiden Qualitätsmerkmale sind vor Allem
-im Bezug zu Buffer-Overflows am wichtigsten. Wartbarkeit und Erweiterbarkeit
-sind langfristig auch zu beachten, da es bei Änderungen am Quellcode
-zu Fehlern kommen kann, welche Schwachstellen herbeibringen.
-Mit Werkzeugen wie Sonar lint können vor allem häufig auftretende Fehler entdeckt
+Es gibt mehrere Möglichkeiten, um kompilierte Programme auf ihre Sicherheit
+und Robustheit zu testen. Wartbarkeit und Erweiterbarkeit
+sind langfristig ebenfalls zu beachten, da es bei Änderungen am Quellcode
+zu Fehlern kommen kann, welche Schwachstellen mit sich bringen.
+Mit Werkzeugen wie SonarLint können vor allem häufig auftretende Fehler entdeckt
 werden.
-Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge um Fuzzy Testing
-zu betreiben. Beim Fuzzy Test wird strukturiert zufällig auf eine
-potentielle Schwachstelle getestet, wobei die tatsächlichen aufrufe
+Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge, um Fuzzy Testing
+zu betreiben. Bei Fuzzy Tests wird gezielt-zufällig auf eine
+potentielle Schwachstelle getestet, wobei die tatsächlichen Aufrufe
 von einem sogenannten Fuzzer erstellt werden.
-Als Alternative zum Fuzzing gibt es Spezifische Payloads und
-Escape-Sequenzen welche - auch automatisiert - getestet werden können.
+Als Alternative zum Fuzzing gibt es spezifische Payloads und
+Escape-Sequenzen mit denen - auch automatisiert - getestet werden kann.
 
 \subsubsection{Statische Analyse}
 Wenn das Programm bereits vor der Ausführung analysiert wird, kann ein
-Tool bestimmen, an welchen stellen Schwachstellen vorhanden sind und
+Tool bestimmen, an welchen Stellen Schwachstellen vorhanden sind, und
 ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
-Projekten die Aussage, dass keine Schwachstellen mehr vorhanden seien
-unmöglich zu treffen. Daher ist dieser Ansatz nimmt recht wenig Zeit in Anspruch
-aber durch die fehlende finale Gewissheit ist der Ansatz alleine nicht ausreichend.
+Projekten die Abwesenheit von Schwachstellen unmöglich zu bestimmen. 
+Daher ist dieser Ansatz zeitsparend, aber durch die fehlende finale Gewissheit alleine nicht ausreichend.
 
 
 \subsubsection{Bug-Bounty-Programme} \label{sec:bounties}
 Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
 Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
-wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung)
-um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche art des Zugriffes
+wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung),
+um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche Art des Zugriffes
 der Angriff ermöglicht.
 
 Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
-Buffer Overflow mit der richtigen Payload ein Shellcode ausgeführt werden kann welcher dann das
-höchste Ziel bei einem Angriff - eine Root Shell - erzielt.
-Diese hohe Zugriffsstufe macht einen Buffer Overflow angriff immer zum Attraktivsten Angriffsvektor,
-falls mehrere Schwachstellen einer Software bekannt sind. Sind mehrere Schwachstellen bekannt, ist die
-Version aber meist veraltet. 
+Buffer Overflow mit der passenden Payload ein Shellcode ausgeführt werden kann, welcher dann das
+höchste Ziel bei einem Angriff - eine Root Shell - erreicht.
+Diese hohe Zugriffsstufe macht einen Buffer-Overflow-Angriff immer zu einem der attraktivsten Vektoren. 
+Sind mehrere Schwachstellen bekannt, ist diese Version meist veraltet. 
 
 
 \subsection{Stack-Schutz mit Canaries} \label{sec:canaries}
-Die Bezeichnung Canary (Engl. Kanarienvogel) stammt aus dem Gebrauch der Kanarienvögel als
-Indikator für Gas in Mienen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
+Die Bezeichnung Canary (engl. Kanarienvogel) leitet sich ab aus der Verwendung von Kanarienvögel als
+Indikator für Gas in Minen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
 dass beispielsweise Zufallszahlen im Programm auf dem Stack sind und bei einem Buffer-Overflow-Angriff
 überschrieben werden. Ein Tool wie StackGuard kann in diesem Fall anhand der Änderung einen Fehler feststellen und
 die Ausführung des Programms abbrechen. Dies stellt offensichtlich eine effektive Möglichkeit dar,
-Buffer Overflows zu erkennen. 
+Buffer Overflows zu erkennen.
 
 %TODO: ASLR Beschreiben
 %ASLR wird ausgehebelt über Adress-Wissen
 %ref auf debugging
 \subsection{Address Space Layout Randomization} \label{sec:aslr}
-Bei \acrlong*{aslr} (\acrshort*{aslr}) geht es vor Allem darum, einem potentiellen Angreifer zu erschweren
-auf Adressen im Stack zuzugreifen bzw. zu wissen was sich dort befinden müsste.
-\gls*{aslr} ist leider wie in \autoref{sec:explainersub} dargestellt nicht effektiv, wenn der Angreifer
-bereits eine Adresse kennt.
+Bei \acrlong*{aslr} (\acrshort*{aslr}) geht es vor allem darum, einem potentiellen Angreifer zu erschweren,
+auf Adressen im Stack zuzugreifen, bzw. zu wissen, was sich dort befindet.
+\gls*{aslr} ist leider, wie in \autoref{sec:explainersub} dargestellt, nicht effektiv, wenn der Angreifer
+bereits eine Adresse im anzugreifenden Prozess kennt.
 ASLR ist bei Linux eine im Kernel bereitgestellte Funktionalität.
-Wenn in \codeline{sysctl} die option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
+Wenn in \codeline{sysctl} die Option \codeline{{kernel.randomize\_va\_space=0}} gesetzt ist,
 wird \gls*{aslr}  nicht verwendet. \cite{aslrandrew} \\
 In neueren Distributionen ist \gls*{aslr} standardmäßig eingeschaltet.
 Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
-zufällig gewählt, sodass wichtige Komponenten wie beispielsweise die
-Prüfung einer Lizenz nicht immer am gleichen Offset liegen. Dann könnte ein Angreifer
-mit dem Wissen über die Speicheradresse des Programms die Speicheradresse beliebiger
-Komponenten zuverlässig errechnen und erreichen.
+zufällig gewählt, sodass wichtige Komponenten, wie beispielsweise die
+Prüfung einer Lizenz, nicht immer am gleichen Offset liegen.
 
-Compiler haben ein Pendant zu \gls*{aslr} welches \gls*{pie}
-genannt wird. So müssen also bei GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
-gesetzt werden. Dies führt dann dazu, dass das Kompilierte Programm auch tatsächlich an
+Compiler haben ein Pendant zu \gls*{aslr}, welches \gls*{pie}
+genannt wird. So müssen also beim GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
+gesetzt werden. Dies führt dann dazu, dass das kompilierte Programm auch tatsächlich an
 unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig
 ist.
 Nach dem gleichen Konzept ist es dann einem Angreifer nicht ohne weiteres möglich, die
-Speicheradressen der Komponenten eines Programms zu wissen da diese Abhängig
+Speicheradressen der Komponenten eines Programms zu kennen, da diese abhängig
 von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
-so sind nun Alle Adressen zufällig und nicht voneinander abhängig.
+so sind nun alle Adressen zufällig und nicht voneinander abhängig.
 
 \subsection{Manuelles Buffer-Overflow-Blocken}
-Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben
-welche er entgegennimmt zuerst filtert und dann validiert. Leider funktioniert
-dies nicht immer zuverlässig und ist für manche Angriffsvektoren schlichtweg nicht
-möglich, da es teilweise nichts gibt um zwischen normaler und böswilliger Anfrage zu
-unterscheiden. Es ist aber dennoch hilfreich die sogenannte Input Sanitization einzubauen.
-Input Sanitization befasst sich grundlegend damit, dass infizierte Eingaben desinfiziert
-werden, sodass im schlimmsten fall eine semantisch inkorrekte Eingaben weiterverarbeitet
-werden, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} \\
-Dadurch ist dieser Ansatz sehr effektiv aber dafür auch sehr aufwändig.
+Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben,
+welche er entgegennimmt, zuerst filtert und dann validiert. Leider funktioniert
+dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
+möglich, da oft nicht zwischen normaler und böswilliger Anfrage unterschieden werden kann. 
+Es ist aber dennoch hilfreich, die sogenannte Input Sanitization einzubauen.
+Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigt, 
+sodass im schlimmsten Fall eine semantisch inkorrekte Eingabe weiterverarbeitet
+wird, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} \\
+Dadurch ist dieser Ansatz sehr effektiv, aber dafür auch sehr aufwändig.
 
 
 
