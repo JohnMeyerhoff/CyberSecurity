@@ -32,7 +32,7 @@ Aktive (Analysierende) Lösungen:
     \item Stack-Schutz mit ``Canary'' (Zufallszahl)
 \end{itemize}
 
-\subsection{Low-Level Probleme}
+\subsection{Low-Level-Probleme}
 Sowohl Hardwarelösungen als auch Betriebssystembasierte Lösungen haben
 das grundlegende Problem, dass die Verhinderung von Buffer-Overflows zu
 ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
@@ -79,7 +79,7 @@ unmöglich zu treffen. Daher ist dieser Ansatz nimmt recht wenig Zeit in Anspruc
 aber durch die fehlende finale Gewissheit ist der Ansatz alleine nicht ausreichend.
 
 
-\subsubsection{Bug Bounty Programme} \label{sec:bounties}
+\subsubsection{Bug-Bounty-Programme} \label{sec:bounties}
 Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
 Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
 wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung)
@@ -130,7 +130,7 @@ Speicheradressen der Komponenten eines Programms zu wissen da diese Abhängig
 von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
 so sind nun Alle Adressen zufällig und nicht voneinander abhängig.
 
-\subsection{Manuelles Buffer Overflow Blocken}
+\subsection{Manuelles Buffer-Overflow-Blocken}
 Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben
 welche er entgegennimmt zuerst filtert und dann validiert. Leider funktioniert
 dies nicht immer zuverlässig und ist für manche Angriffsvektoren schlichtweg nicht
