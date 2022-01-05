@@ -28,7 +28,7 @@ die über die Register rdi, rdx, r10 und r8 gesetzt werden. In rdi wird die Zeic
 Zu beachten ist hierbei die invertierte Eingabe, da execveat() die Zeichenkette in Little Endian Reihenfolge erwartet. Das rsp Register, also der Stack Pointer, 
 enthält nun einen Zeiger auf das rdi Register. Dieser Zeiger wird nun in das rsi Register geladen. Nun sind beide benötigten Argumente gesetzt. 
 Abschließend werden die übrigen Argumente auf 0 gesetzt. Hierfür wird zunächst das rdx Register über cqo (convert word to quadword) auf 0 gesetzt und
-anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen.
+anschließend der Wert von rdx in die Register r10 und r8 geschoben. Der syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
 
 Die verwendeten Register und ihr Inhalt zum Zeitpunkt des syscalls:
 
