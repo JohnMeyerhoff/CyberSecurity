@@ -27,15 +27,15 @@ Passive Härtung der Programme:
 Aktive (analysierende) Lösungen:
 \begin{itemize}
     \item Statische Analyse
-    \item Stack-Schutz mit ''Canary'' (Zufallszahl)
+    \item Stack-Schutz mit ``Canary'' (Zufallszahl)
 \end{itemize}
 
 \subsection{Low-Level-Probleme}
 Sowohl Hardwarelösungen als auch betriebssystembasierte Lösungen haben
 das grundlegende Problem, dass die Verhinderung von Buffer Overflows zu
 ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
-jegliche Overflows zu verhindern - dabei können jedoch auch vom
-Entwickler gewünschte Overflows blockiert werden, sodass Programme nicht mehr
+jegliche Overflows zu verhindern - dabei werden jedoch auch (falls vorhanden) die vom
+Entwickler gewünschten Overflows blockiert, sodass Programme nicht mehr
 ordnungsgemäß funktionieren. Manchmal wird aus Gründen der Effizienz ein
 Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
 geschieht. Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
@@ -47,7 +47,7 @@ Damit ist dieser Ansatz nicht praktikabel.
 Ein Out Of Bounds Object ist eine vereinfachte Lösung, um Referenzen ungefährlich zu machen.
 Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem jede
 Adresse, welche nicht im spezifizierten Bereich liegt, auf ein bestimmtes Objekt, das sogenannte
-''Out Of Bounds Object'' verweist. Diese Methode ist nicht gängig, da sie leicht
+``Out Of Bounds Object'' verweist. Diese Methode ist nicht gängig, da sie
 umgangen werden kann, sofern der Angreifer weiß, welcher Speicherbereich für das Programm
 vorgesehen ist.
 
@@ -86,7 +86,7 @@ Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe aus
 Buffer Overflow mit der passenden Payload ein Shellcode ausgeführt werden kann, welcher dann das
 höchste Ziel bei einem Angriff - eine Root Shell - erreicht.
 Diese hohe Zugriffsstufe macht einen Buffer-Overflow-Angriff immer zu einem der attraktivsten Vektoren. 
-Sind mehrere Schwachstellen bekannt, ist diese Version meist veraltet. 
+Sind mehrere Schwachstellen für ein Programm bekannt, ist dessen Version meist veraltet. 
 
 \pagebreak
 \subsection{Stack-Schutz mit Canaries} \label{sec:canaries}
@@ -111,7 +111,9 @@ wird \gls*{aslr}  nicht verwendet. \cite{aslrandrew} \\
 In neueren Distributionen ist \gls*{aslr} standardmäßig eingeschaltet.
 Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
 zufällig gewählt, sodass wichtige Komponenten, wie beispielsweise die
-Prüfung einer Lizenz, nicht immer am gleichen Offset liegen.
+Prüfung einer Lizenz, nicht immer am gleichen Offset liegen. Denn ansonsten könnte ein Angreifer
+mit dem Wissen über die Speicheradresse des Programms die Speicheradresse beliebiger
+Komponenten zuverlässig errechnen und erreichen.
 
 Compiler haben ein Pendant zu \gls*{aslr}, welches \gls*{pie}
 genannt wird. So müssen also beim GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
@@ -129,11 +131,8 @@ welche er entgegennimmt, zuerst filtert und dann validiert. Leider funktioniert
 dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
 möglich, da oft nicht zwischen normaler und böswilliger Anfrage unterschieden werden kann. 
 Es ist aber dennoch hilfreich, die sogenannte Input Sanitization einzubauen.
-Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigt, 
+Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigen, 
 sodass im schlimmsten Fall eine semantisch inkorrekte Eingabe weiterverarbeitet
 wird, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \cite{sanitize} \\
 Dadurch ist dieser Ansatz sehr effektiv, aber dafür auch sehr aufwändig.
-
-
-
 
