@@ -1,24 +1,18 @@
 \pagebreak
 
 \section{Fazit}
-Dadurch dass es diverse Angriffsmöglichkeiten und Gegenmaßnahmen gibt,
-ist es sowohl für Angreifer als auch Angriffsziel nicht einfach,
-eine Übersicht über die offenen Schwachstellen eines Prozesses zu halten.
-Wie bereits in \autoref{sec:wellknown} behandelt, gibt es sehr viele Buffer Overflow
-angriffe in der welche inzwischen Bekannt sind. Dadurch das ein Angreifer jedoch
-wie in \autoref{sec:bounties} erwähnt root-zugriff erlangen kann, ist es für einen
-versierten Angreifer möglich, die Spuren des Angriffs auf dem Zielsystem zu
-entfernen. Natürlich können nicht ohne weiteres Logs von einem Zwischenserver
-oder dem Internetanbieter gelöscht werden - trotzdem werden viele der Angriffe
-meist nicht - oder nicht direkt - als solche erkannt und stellen damit eine der
-grössten Bedrohungen im Bereich der Cybersecurity dar.
+Unsere Ergebnisse zeigen, dass durch die schiere Masse an Angriffsmöglichkeiten und Verteidigungsmaßnahmen, 
+es sowohl für Angreifer als auch für potenzielle Ziele, schwierig ist sämtliche Vektoren zu überblicken. 
+Verfahren wie ASLR können Angriffsflächen verkleinern, ein absoluter Schutz ist aber, bei Ansprüchen an Funktionalität, nicht möglich.
 
-Es gibt Verfahren wie \acrlong{aslr} und \acrlong{pie} welche wie in \autoref{sec:aslr}
-beschrieben die Angriffsfläche verkleinern, aber keine absolute Sicherheit bieten.
+Erfolgreiche Angriffe können, je nach betroffener Software und injizierbarem Shellcode, tausende von Geräten kompromittieren und
+Unternehmen nicht nur finanziell schaden, sondern auch ihre Reputation langfristig zerstören. 
+Aufgrund dieser katastrophalen Folgen, die eine Buffer Overflow Schwachstelle für ein Unternehmen oder für Privatanwender, 
+haben kann, werden sie noch lange eine zentrale Rolle in der Informationssicherheit einnehmen und 
+Softwareunternehmen hohe Prämien für die Aufdeckung solcher Schwachstellen ausstellen. 
 
-Es gibt verschiedene Arten von Overflows (siehe \autoref{sec:stackoverflow} und \ref*{sec:heapoverflow})
-welche ein Angreifer wie in \autoref{sec:explainersub} beschrieben ausnutzen kann um
-mit einer Payload (siehe \autoref{sec:shellcode}) eine reverse Shell zu öffnen.
+Für angehende Entwickler ist es unabdinglich, sich saubere und sichere Programmierstandards anzueignen, um eine robuste Grundlage für resistente Software zu schaffen. 
+Niemand kann vorhersagen, ob Buffer Overflows jemals vollständig verschwinden werden, aktuell scheint dies jedoch sehr unwahrscheinlich.
 
 %☑️Themen: Kap 2 Bekannte -> Dadurch relevant   
 %Themen: Kap 3.3 3.4 -> Referenz(Es gibt mehrere Arten)
