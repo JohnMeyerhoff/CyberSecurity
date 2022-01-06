@@ -8,7 +8,7 @@ das Schreiben von Code, der bei der Ausführung eine Remote Shell öffnet. Die B
 beschreibt mittlerweile jeden Byte Code, der in einen Exploit eingefügt wird, um eine gewünschte Aufgabe zu erfüllen.
 
 Zwar ist es theoretisch möglich, Shellcode in höheren Programmiersprachen zu schreiben, in der Praxis ist die effizienteste und
-fast ausschließlich verwendete Sprache jedoch Assembly. Der Einsatz Assembly ermöglicht, so maschinennah wie möglich zu arbeiten,
+fast ausschließlich verwendete Sprache jedoch Assembly. Der Einsatz von Assembly ermöglicht, so maschinennah wie möglich zu arbeiten,
 um mehr Kontrolle über Abläufe zu haben und Speicherplatz zu sparen. Der verfügbare Speicher für Shellcode ist meist limitiert.
 Da Shellcode in Assembly geschrieben wird, ist es wichtig zu beachten, auf welcher Hardware und auf welchem Betriebssystem dieser laufen soll.
 Es bestehen klare Unterschiede zwischen Linux und Windows Shellcode: Unter Linux hat man überwiegend direkten Zugriff auf Interface und Kernel,
@@ -35,6 +35,7 @@ Abschließend werden die übrigen Argumente auf \codeline{0} gesetzt. Hierfür w
 über \codeline{cqo} (convert word to quadword) auf \codeline{0} gesetzt und
 anschließend der Wert von \codeline{rdx} in die Register \codeline{r10} und \codeline{r8} geschoben. 
 Der Syscall kann nun erfolgreich durchgeführt werden und eine Shell öffnen. \cite{syscalls} \cite{execman}
+\pagebreak
 
 \begin{figure}[h]
     \centering
