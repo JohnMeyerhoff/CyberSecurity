@@ -1,28 +1,125 @@
 \pagebreak
-\begin{frame}{Gegenmaßnahmen}{Struktur}
-    \begin{itemize}
-        \item Stack-Schutz mit ``Canary'' (Zufallszahl)
-        \item Safe Pointer Instrumentalisierung
-        \item C Range Error Detector und Out Of Bounds Object
-        \item Hardware-basierte Lösungen
-        \item Statische Code-Analyse
-        \item Betriebssystembasierte Ansätze
-        \item Manuelles Buffer-Overflow Blocken (Input-Bereinigung)
-    \end{itemize}
+\begin{frame}{Gegenmaßnahmen}{Übersicht}
+    Low-Level:
+\begin{itemize}
+    \item Hardware-basierte Lösungen
+    \item Betriebssystembasierte Ansätze
+\end{itemize}
+Passive Härtung der Programme:
+\begin{itemize}
+    \item C Range Error Detector und Out Of Bounds Object
+    \item Address Space Layout Randomization
+    %\item Safe Pointer Instrumentalisierung wäre zu viel https://download.vusec.net/papers/delta-pointers_eurosys18.pdf
+    \item Manuelles Buffer-Overflow-Blocken (Input-Bereinigung)
+\end{itemize}
+Aktive (analysierende) Lösungen:
+\begin{itemize}
+    \item Statische Analyse
+    \item Stack-Schutz mit ``Canary'' (Zufallszahl)
+\end{itemize}
 \end{frame}
 
 
 
-\begin{frame}{Gegenmaßnahmen}{Code-Beispiel}
-    \begin{center}
-        %TODO: Besseres Beispiel finden.
-        \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/Libverify.png}
-    \end{center}
+\begin{frame}{Gegenmaßnahmen}{Low-Level-Probleme}
+    Sowohl Hardwarelösungen als auch betriebssystembasierte Lösungen haben
+    das grundlegende Problem, dass die Verhinderung von Buffer Overflows zu
+    ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
+    jegliche Overflows zu verhindern - dabei werden jedoch auch (falls vorhanden) die vom
+    Entwickler gewünschten Overflows blockiert, sodass Programme nicht mehr
+    ordnungsgemäß funktionieren. Manchmal wird aus Gründen der Effizienz ein
+    Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
+    geschieht. Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
+    zu unterscheiden, welcher Buffer Overflow böswillig und welcher gewollt ist. 
+    Damit ist dieser Ansatz nicht praktikabel.
 \end{frame}
+
+\begin{frame}{Gegenmaßnahmen}{C Range Error Detector und Out Of Bounds Object}
+    Ein Out Of Bounds Object ist eine vereinfachte Lösung, um Referenzen ungefährlich zu machen.
+    Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem jede
+    Adresse, welche nicht im spezifizierten Bereich liegt, auf ein bestimmtes Objekt, das sogenannte
+    ``Out Of Bounds Object'' verweist. Diese Methode ist nicht gängig, da sie
+    umgangen werden kann, sofern der Angreifer weiß, welcher Speicherbereich für das Programm
+    vorgesehen ist.
+\end{frame}
+
+
+
 
 \begin{frame}{Gegenmaßnahmen}{Testen}
-    \begin{itemize}
-        \item Fuzzy Tests
-        \item Spezifische Payloads
-    \end{itemize}
+    Es gibt mehrere Möglichkeiten, um kompilierte Programme auf ihre Sicherheit
+    und Robustheit zu testen. Wartbarkeit und Erweiterbarkeit
+    sind langfristig ebenfalls zu beachten, da es bei Änderungen am Quellcode
+    zu Fehlern kommen kann, welche Schwachstellen mit sich bringen.
+    Mit Werkzeugen wie SonarLint können vor allem häufig auftretende Fehler entdeckt
+    werden.
+    Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge, um Fuzzy Testing
+    zu betreiben. Bei Fuzzy Tests wird gezielt-zufällig auf eine
+    potentielle Schwachstelle getestet, wobei die tatsächlichen Aufrufe
+    von einem sogenannten Fuzzer erstellt werden.
+    Als Alternative zum Fuzzing gibt es spezifische Payloads und
+    Escape-Sequenzen mit denen - auch automatisiert - getestet werden kann.
+    
 \end{frame}
+
+
+\begin{frame}{Gegenmaßnahmen}{Statische Analyse}
+    Wenn das Programm bereits vor der Ausführung analysiert wird, kann ein
+    Tool bestimmen, an welchen Stellen Schwachstellen vorhanden sind, und
+    ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
+    Projekten die Abwesenheit von Schwachstellen unmöglich zu bestimmen. 
+    Daher ist dieser Ansatz zeitsparend, aber durch die fehlende finale Gewissheit alleine nicht ausreichend.
+    
+    
+\end{frame}
+
+
+\begin{frame}{Gegenmaßnahmen}{Bug-Bounty-Programme} 
+    Viele Unternehmen externalisieren zusätzliche Tests durch Prämien für gefundene Sicherheitslücken.
+    Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
+    wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung),
+    um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche Art des Zugriffes
+    der Angriff ermöglicht.
+    
+    Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
+    Buffer Overflow mit der passenden Payload ein Shellcode ausgeführt werden kann, welcher dann das
+    höchste Ziel bei einem Angriff - eine Root Shell - erreicht.
+    Diese hohe Zugriffsstufe macht einen Buffer-Overflow-Angriff immer zu einem der attraktivsten Vektoren. 
+    Sind mehrere Schwachstellen für ein Programm bekannt, ist dessen Version meist veraltet. 
+    
+    
+\end{frame}
+
+
+\begin{frame}{Gegenmaßnahmen}{Stack-Schutz mit Canaries} 
+    Die Bezeichnung Canary (engl. Kanarienvogel) leitet sich ab aus der Verwendung von Kanarienvögel als
+    Indikator für Gas in Minen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
+    
+    Compiler haben ein Pendant zu ASLR welches pie
+    genannt wird. So müssen also beim GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
+    gesetzt werden. Dies führt dann dazu, dass das kompilierte Programm auch tatsächlich an
+    unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig
+    ist.
+    Nach dem gleichen Konzept ist es dann einem Angreifer nicht ohne weiteres möglich, die
+    Speicheradressen der Komponenten eines Programms zu kennen, da diese abhängig
+    von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
+    so sind nun alle Adressen zufällig und nicht voneinander abhängig.
+    
+    
+\end{frame}
+
+
+\begin{frame}{Gegenmaßnahmen}{Manuelles Buffer-Overflow-Blocken}
+    Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben,
+    welche er entgegennimmt, zuerst filtert und dann validiert. Leider funktioniert
+    dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
+    möglich, da oft nicht zwischen normaler und böswilliger Anfrage unterschieden werden kann. 
+    Es ist aber dennoch hilfreich, die sogenannte Input Sanitization einzubauen.
+    Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigen, 
+    sodass im schlimmsten Fall eine semantisch inkorrekte Eingabe weiterverarbeitet
+    wird, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \\
+    Dadurch ist dieser Ansatz sehr effektiv, aber dafür auch sehr aufwändig.
+    
+    
+\end{frame}
+
