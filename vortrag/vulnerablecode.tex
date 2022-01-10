@@ -22,22 +22,90 @@
 
 
 \begin{frame}{Praktische Analyse}{Format-String-Schwachstelle}
-    Unvorsichtige Verwendung von Formatierungsfunktionen:\\ %Leichtsinnige
-    \codeline{printf(``\%s'', chars)}\\ Ist eine gute Umsetzung,\\
-    \codeline{printf(``\%s'', chars)}\\ hingegen nicht.
+    Unvorsichtige Verwendung von Formatierungsfunktionen:
+    \begin{itemize}
+        \vspace{1em}
+    \item \codeline{printf(``\%s'', chars)}\\ Korrekte/Sichere Verwendung
+     \vspace{1em}
+    \item \codeline{printf(chars)}\\ Falsche/Unsichere Verwendung
 %BIG CODEIMAGE
 \end{frame}
 
-
 \begin{frame}{Praktische Analyse}{Demonstration}
-    [Screenshare]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/gruss.png}
+        \caption{Funktion \codeline{gruss()} }
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Praktische Analyse}{Demonstration}
-    [Bild1]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/segfault.png}
+        \caption{Segmentierungsfehler}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/adressen.png}
+        \caption{Ausgegebene Speicheradressen}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Praktische Analyse}{Demonstration}
-    [Bild2]
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/map.png}
+        \caption{Memory Map}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/buffer.png}
+        \caption{Speicherinhalt}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Praktische Analyse}{Demonstration}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/payload1.png}
+        \caption{Payload 1}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/payload2.png}
+        \caption{Payload 2}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/nop.png}
+        \caption{NOP Slide}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Praktische Analyse}{Demonstration}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/format.png}
+        \caption{Format-String-Ausgabe}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/rip.png}
+        \caption{RIP}
+    \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/payload.png}
+        \caption{Payload}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Praktische Analyse}{Demonstration}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth,height=0.75\textheight,keepaspectratio]{images/root.png}
+        \caption{Root Shell}
+    \end{figure}
 \end{frame}
 
