@@ -1,5 +1,22 @@
-\begin{frame}{Anfälliger Quellcode}
+\begin{frame}{Praktische Analyse}{Programmierfehler}
+    Overflow-anfällig sind Sprachen, welche direkte Zugriffe auf die Speicherstrukturen\\ des Systems ermöglichen:
     \begin{itemize}
-        \item Codebeispiel hier einfügen
+        \vspace{1em}
+        \item Assembly
+        \item C/C++
+        \item Fortran
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Praktische Analyse}{Programmierfehler}
+    Problematisch sind Funktionen, welche
+    keine Kontrolle auf die Länge des Inputs implementieren: %ausüben / durchführen
+    \begin{itemize}
+        \vspace{1em}
+        \item \codeline{gets(buffer)}\\ Erwartet Input und kopiert diesen in den angegebenen Speicher
+        \vspace{1em}
+        \item \codeline{strcopy(buffer, input)}\\ Kopiert einen Input
+        in den angegebenen Speicher
+    \end{itemize}
+\end{frame}
+
