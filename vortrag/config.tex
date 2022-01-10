@@ -1,0 +1,31 @@
+\setlength{\parindent}{0px}
+\newcommand{\alias} [2]{\@ifdefinable #1{\let #1 #2}}
+%\alias\realias\let
+\newcommand{\providealias}[2]{\@ifundefined #1{\let #1 #2}}
+
+\makeatletter
+\newcommand{\fixed@sra}{$\vrule height 2\fontdimen22\textfont2 width 0pt\shortrightarrow$}
+\newcommand{\shortarrow}[1]{%
+  \mathrel{\text{\rotatebox[origin=c]{\numexpr#1*45}{\fixed@sra}}}
+}
+\definecolor{method}{rgb}{0.2,0.2,1}
+\newcommand{\codeline}[1]{{\color{method}\texttt{#1}}}
+
+%command for z.\,B. ??
+
+
+
+\newcommand{\ThesisAuthorGivenName}{}
+\newcommand{\ThesisAuthorSurname}{Jakob Stühn, John Meyerhoff, Sam Taheri}
+\newcommand{\ThesisAuthor}{\ThesisAuthorSurname}
+\newcommand{\ThesisKeywords}{Keywords die diese Arbeit beschreiben}
+\newcommand{\ThesisLocation}{Sankt Augustin}
+\newcommand{\ThesisPubDate}{7. Januar 2022} %\today
+\newcommand{\ThesisSubject}{Praktische Analyse von Schwachstellen}
+\newcommand{\ThesisStudyCourse}{Computer Science}
+\newcommand{\ThesisStudyCourseGerman}{Informatik}
+\newcommand{\ThesisSubjectType}{Projektbericht}
+\newcommand{\ThesisSupervisorFirst}{Mandana Ewert }
+\newcommand{\ThesisSupervisorSecond}{Prof. Dr. Stefan Böhmer}
+\newcommand{\ThesisTitle}{Buffer Overflows}
+\newcommand{\ThesisType}{Bachelor}

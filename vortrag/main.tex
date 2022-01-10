@@ -1,16 +1,36 @@
 \documentclass[aspectratio=169]{beamer}
-\title{Buffer Overflow}
-\subtitle{Schwachstellen und wie man sie Schließt}
+\title{Buffer Overflows}
+\subtitle{Praktische Analyse von Schwachstellen}
 \author{Jakob Stühn, John Meyerhoff, Sam Taheri}
 \institute{H-BRS}
 \usetheme{Berlin}
+\input{config.tex}
 \begin{document}
 
 \frame{\titlepage}
 
+
 \input{introduction.tex}
-\input{vulnerablecode.tex}
+\pagebreak
+
+% Sam:
+\input{history.tex}
+\pagebreak
+
+% Jakob:
+\input{basictheory.tex}
+%\input{vulnerablecode.tex}
+\pagebreak
+
+% Sam:
+%\input{shellcode.tex}
+\pagebreak
+
+% Jakob:
+%\input{demo.tex}
+% John:
 \input{countermechanisms.tex}
 
-\input{sources.tex}
+%Everybody <3
+%\input{conclusion.tex}\input{sources.tex}
 \end{document}
