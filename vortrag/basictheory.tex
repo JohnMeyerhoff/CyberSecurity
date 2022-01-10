@@ -33,10 +33,12 @@
 
 
 \begin{frame}{Grundlegende Theorie}{Heap Overflow}
-Während der Laufzeit eines Programms allozierter Speicher (z.\,B. durch \codeline{malloc()}) wird im Heap angelegt. Dabei setzt sich
-jeder Speicherblock aus einem Header und dem tatsächlich angeforderten Speicher zusammen. Der Header enthält hierbei,
-je nach Implementation, Informationen über den Block, wie z.\,B. seine Größe. Aus diesen Informationen kann dann abgeleitet
-werden, an welcher Stelle der nächste Block beginnt.
+\begin{itemize}
+        \item Während der Laufzeit eines Programms allozierter Speicher (z.\,B. durch \codeline{malloc()})
+        \item Speicherblöcke aus Headern und angefordertem Speicher
+        \item Sprungadressen nicht direkt manipulierbar
+        \item In der Praxis komplexer und schwieriger
+    \end{itemize}
 \end{frame}
 
 
