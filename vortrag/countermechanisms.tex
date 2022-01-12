@@ -22,55 +22,45 @@ Aktive (analysierende) Lösungen:
 
 
 \begin{frame}{Gegenmaßnahmen}{Low-Level-Probleme}
-    Sowohl Hardwarelösungen als auch betriebssystembasierte Lösungen haben
-    das grundlegende Problem, dass die Verhinderung von Buffer Overflows zu
-    ungewünschten Nebeneffekten führen kann. Es ist auf jeden Fall möglich,
-    jegliche Overflows zu verhindern - dabei werden jedoch auch (falls vorhanden) die vom
-    Entwickler gewünschten Overflows blockiert, sodass Programme nicht mehr
-    ordnungsgemäß funktionieren. Manchmal wird aus Gründen der Effizienz ein
-    Buffer zum Überlaufen gebracht, ohne dass dieser Überlauf unkontrolliert
-    geschieht. Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
+    Hardware- und betriebssystembasierte Lösungen
+   \begin{itemize}
+       \item können alle Overflows verhindern
+       \item können nicht unterscheiden ob böswillig oder geplant
+   \end{itemize}
+    
+    Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
     zu unterscheiden, welcher Buffer Overflow böswillig und welcher gewollt ist. 
     Damit ist dieser Ansatz nicht praktikabel.
 \end{frame}
 
 \begin{frame}{Gegenmaßnahmen}{C Range Error Detector und Out Of Bounds Object}
-    Ein Out Of Bounds Object ist eine vereinfachte Lösung, um Referenzen ungefährlich zu machen.
-    Es wird verhindert, dass auf Speicher außerhalb des Programms zugegriffen wird, indem jede
-    Adresse, welche nicht im spezifizierten Bereich liegt, auf ein bestimmtes Objekt, das sogenannte
-    ``Out Of Bounds Object'' verweist. Diese Methode ist nicht gängig, da sie
-    umgangen werden kann, sofern der Angreifer weiß, welcher Speicherbereich für das Programm
-    vorgesehen ist.
+    Out Of Bounds Object versucht Referenzen ungefährlich zu machen.\\
+    Jede
+    Adresse, welche nicht im gültigen Bereich liegt, verweist auf das OOBO. \\
+    Kann umgangen werden, sofern der Angreifer über Speicheradressen informiert ist. %die Adressen des Programms
 \end{frame}
 
 
 
 
 \begin{frame}{Gegenmaßnahmen}{Testen}
-    Es gibt mehrere Möglichkeiten, um kompilierte Programme auf ihre Sicherheit
-    und Robustheit zu testen. Wartbarkeit und Erweiterbarkeit
-    sind langfristig ebenfalls zu beachten, da es bei Änderungen am Quellcode
-    zu Fehlern kommen kann, welche Schwachstellen mit sich bringen.
-    Mit Werkzeugen wie SonarLint können vor allem häufig auftretende Fehler entdeckt
-    werden.
-    Im Bereich der Overflow Payloads gibt es mehrere Werkzeuge, um Fuzzy Testing
-    zu betreiben. Bei Fuzzy Tests wird gezielt-zufällig auf eine
-    potentielle Schwachstelle getestet, wobei die tatsächlichen Aufrufe
-    von einem sogenannten Fuzzer erstellt werden.
-    Als Alternative zum Fuzzing gibt es spezifische Payloads und
-    Escape-Sequenzen mit denen - auch automatisiert - getestet werden kann.
-    
+    \begin{itemize}
+        \item erhöhen Sicherheit und Robustheit. 
+        \item Werkzeuge wie SonarLint% können häufig auftretende Fehler entdeckt werden.
+        \item Fuzzy Tests -- gezielt zufällig
+        \item spezifische Payloads und Escape-Sequenzen
+    \end{itemize}    
 \end{frame}
 
 
 \begin{frame}{Gegenmaßnahmen}{Statische Analyse}
-    Wenn das Programm bereits vor der Ausführung analysiert wird, kann ein
-    Tool bestimmen, an welchen Stellen Schwachstellen vorhanden sind, und
-    ggf. vorschlagen, wie diese behoben werden können. Leider ist bei größeren
-    Projekten die Abwesenheit von Schwachstellen unmöglich zu bestimmen. 
-    Daher ist dieser Ansatz zeitsparend, aber durch die fehlende finale Gewissheit alleine nicht ausreichend.
+    Programm wird bereits vor der Ausführung analysiert 
+    Ein Tool kann Schwachstellen bestimmen und
+    vorschlagen, wie diese behoben werden könnten.
     
+    Zeitsparend aber alleine nicht ausreichend.
     
+    Abwesenheit von Schwachstellen unmöglich zu bestimmen.
 \end{frame}
 
 
