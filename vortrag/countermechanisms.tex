@@ -100,16 +100,18 @@ Aktive (analysierende) Lösungen:
 \end{frame}
 
 
-\begin{frame}{Gegenmaßnahmen}{Manuelles Buffer-Overflow-Blocken}
-    Eingaben zuerst filtern und dann validieren.
-    Leider funktioniert dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
-    möglich, da oft nicht zwischen normaler und böswilliger Anfrage unterschieden werden kann. 
-    Es ist aber dennoch hilfreich, die sogenannte Input Sanitization einzubauen.
-    Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigen, 
-    sodass im schlimmsten Fall eine semantisch inkorrekte Eingabe weiterverarbeitet
-    wird, nicht aber Datenlecks oder ungewollte Aufrufe entstehen. \\
-    Dadurch ist dieser Ansatz sehr effektiv, aber dafür auch sehr aufwändig.
-    
-    
+\begin{frame}{Gegenmaßnahmen}{Manuelles Buffer-Overflow-Blocken}    
+    Input Sanitization $\rightarrow$ infizierte Eingaben bereinigen\\ 
+    Im schlimmsten Fall wird eine semantisch inkorrekte Eingabe weiterverarbeitet,\\
+    nicht aber eine böswillige, durch welche Datenlecks oder ungewollte Aufrufe entstehen würden.
+    \vspace{1em}
+    \begin{itemize}
+        \item Eingaben zuerst filtern und dann validieren.
+        \item Nicht immer möglich
+        \item Zwischen normaler und böswilliger Anfrage unterscheiden
+        \item Nicht immer zuverlässig 
+    \end{itemize} 
+    \vspace{1em}
+    Dieser Ansatz ist sehr effektiv, aber dafür auch sehr aufwändig.    
 \end{frame}
 
