@@ -34,10 +34,11 @@ Aktive (analysierende) Lösungen:
 \end{frame}
 
 \begin{frame}{Gegenmaßnahmen}{C Range Error Detector und Out Of Bounds Object}
-    Out Of Bounds Object versucht Referenzen ungefährlich zu machen.\\
-    Jede
-    Adresse, welche nicht im gültigen Bereich liegt, verweist auf das OOBO. \\
-    Kann umgangen werden, sofern der Angreifer über Speicheradressen informiert ist. %die Adressen des Programms
+    \begin{itemize}
+        \item Out Of Bounds Object hilft Referenzen ungefährlich zu machen.
+        \item Jede Adresse, welche nicht im gültigen Bereich liegt, verweist auf das OOBO. 
+        \item Kann umgangen werden, sofern der Angreifer über Speicheradressen informiert ist. %die Adressen des Programms
+    \end{itemize}
 \end{frame}
 
 
@@ -45,64 +46,63 @@ Aktive (analysierende) Lösungen:
 
 \begin{frame}{Gegenmaßnahmen}{Testen}
     \begin{itemize}
-        \item erhöhen Sicherheit und Robustheit. 
-        \item Werkzeuge wie SonarLint% können häufig auftretende Fehler entdeckt werden.
+        \item Erhöhen Sicherheit und Robustheit
         \item Fuzzy Tests -- gezielt zufällig
-        \item spezifische Payloads und Escape-Sequenzen
+        \item Spezifische Payloads und Escape-Sequenzen
+        \item Werkzeuge wie SonarLint analysieren statisch% können häufig auftretende Fehler entdeckt werden.
     \end{itemize}    
 \end{frame}
 
 
 \begin{frame}{Gegenmaßnahmen}{Statische Analyse}
-    Programm wird bereits vor der Ausführung analysiert 
-    Ein Tool kann Schwachstellen bestimmen und
-    vorschlagen, wie diese behoben werden könnten.
-    
-    Zeitsparend aber alleine nicht ausreichend.
-    
-    Abwesenheit von Schwachstellen unmöglich zu bestimmen.
+
+\begin{itemize}
+    \item Programm wird bereits vor der Ausführung analysiert 
+    \item Kann Schwachstellen bestimmen und Lösungen vorschlagen
+    \item Zeitsparend aber alleine nicht ausreichend.
+    \item Abwesenheit von Schwachstellen unmöglich zu bestimmen.    
+\end{itemize}
+
 \end{frame}
 
 
 \begin{frame}{Gegenmaßnahmen}{Bug-Bounty-Programme} 
     Externalisieren von Tests durch Prämien für gefundene Sicherheitslücken.
-    Die Prämien sind meist davon abhängig, in welcher Version der Software der Angriff 
-    wirksam ist und welche Voraussetzungen erfüllt sein müssen (physikalischer Zugriff / Netzwerkverbindung),
-    um den Angriff auszuführen. Auch wichtig für die Höhe der Prämie ist, welche Art des Zugriffes
-    der Angriff ermöglicht.
-    
-    Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
-    Buffer Overflow mit der passenden Payload ein Shellcode ausgeführt werden kann, welcher dann das
-    höchste Ziel bei einem Angriff - eine Root Shell - erreicht.
-    Diese hohe Zugriffsstufe macht einen Buffer-Overflow-Angriff immer zu einem der attraktivsten Vektoren. 
-    Sind mehrere Schwachstellen für ein Programm bekannt, ist dessen Version meist veraltet. 
+
+    \vspace{1em}
+    Die Prämien sind davon abhängig:
+    \begin{itemize}
+        \item in welcher Version der Software
+        \item unter welchen Voraussetzungen
+    \end{itemize}
+
+    eine Schwachstelle vorliegt und welche Art des Zugriffes der Angriff ermöglicht.
+
+    \vspace{1em}
+    Buffer-Overflow-Sicherheitslücken haben eine implizit hohe Zugriffsstufe \\
+    und gehören dadurch zu den lukrativsten.
+    %Wurde ein Buffer Overflow entdeckt, so wird meist die höchste Prämienstufe ausgezahlt, da bei einem
+    %Buffer Overflow mit der passenden Payload ein Shellcode ausgeführt werden kann, welcher dann das
+    %höchste Ziel bei einem Angriff - eine Root Shell - erreicht.
+    %Diese hohe Zugriffsstufe macht einen Buffer-Overflow-Angriff immer zu einem der attraktivsten Vektoren. 
+    %Sind mehrere Schwachstellen für ein Programm bekannt, ist dessen Version meist veraltet. 
     
     
 \end{frame}
 
 
 \begin{frame}{Gegenmaßnahmen}{Stack-Schutz mit Canaries} 
-    Die Bezeichnung Canary (engl. Kanarienvogel) leitet sich ab aus der Verwendung von Kanarienvögel als
-    Indikator für Gas in Minen. Die Canaries im Code werden als Stack-Schutz verwendet. Das bedeutet,
+    (engl. Kanarienvogel) -- Kanarienvögel als
+    Indikator für Gas in Minen. 
     
-    Compiler haben ein Pendant zu ASLR welches pie
-    genannt wird. So müssen also beim GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
-    gesetzt werden. Dies führt dann dazu, dass das kompilierte Programm auch tatsächlich an
-    unabhängigen und von Ausführung zu Ausführung unterschiedlichen Speicheradressen lauffähig
-    ist.
-    Nach dem gleichen Konzept ist es dann einem Angreifer nicht ohne weiteres möglich, die
-    Speicheradressen der Komponenten eines Programms zu kennen, da diese abhängig
-    von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
-    so sind nun alle Adressen zufällig und nicht voneinander abhängig.
-    
+    %TODO: Inhalt
     
 \end{frame}
 
 
 \begin{frame}{Gegenmaßnahmen}{Manuelles Buffer-Overflow-Blocken}
-    Ein Programmierer kann Buffer Overflows verhindern, indem er die Eingaben,
-    welche er entgegennimmt, zuerst filtert und dann validiert. Leider funktioniert
-    dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
+    Eingaben zuerst filtern und dann validieren.
+    Leider funktioniert dies nicht immer zuverlässig und ist für einige Angriffsvektoren schlichtweg nicht
     möglich, da oft nicht zwischen normaler und böswilliger Anfrage unterschieden werden kann. 
     Es ist aber dennoch hilfreich, die sogenannte Input Sanitization einzubauen.
     Input Sanitization befasst sich grundlegend damit, infizierte Eingaben zu bereinigen, 
