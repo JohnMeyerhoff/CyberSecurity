@@ -29,7 +29,8 @@ Aktive (analysierende) Lösungen:
    \end{itemize}
     
     Leider ist es praktisch nicht umsetzbar, in einer Hardwarelösung
-    zu unterscheiden, welcher Buffer Overflow böswillig und welcher gewollt ist. 
+    zu unterscheiden, \\
+    welcher Buffer Overflow böswillig und welcher gewollt ist. \\
     Damit ist dieser Ansatz nicht praktikabel.
 \end{frame}
 
@@ -94,10 +95,55 @@ Aktive (analysierende) Lösungen:
 \begin{frame}{Gegenmaßnahmen}{Stack-Schutz mit Canaries} 
     (engl. Kanarienvogel) -- Kanarienvögel als
     Indikator für Gas in Minen. 
-    
-    %TODO: Inhalt
+    \vspace{1em}
+    \begin{itemize}
+        \item  Zufallszahlen im Programm auf dem Stack 
+        \item  Würden beim Buffer-Overflow-Angriff überschrieben werden
+        \item  Tools wie StackGuard stellen eine Änderung fest
+        \item Die Ausführung wird abgebrochen
+    \end{itemize}
+    \vspace{1em}
+    Canaries stellen eine effektive Möglichkeit dar, Overflows zu erkennen.
     
 \end{frame}
+
+
+
+
+\begin{frame}{Gegenmaßnahmen}{Address Space Layout Randomization} 
+   
+    
+    ASLR soll dem Angreifer erschweren,
+    auf Adressen im Stack zuzugreifen, bzw. zu wissen, was sich dort befindet.
+    \vspace{1em}    
+    \begin{itemize}
+        \item Ineffektiv, wenn der Angreifer bereits eine Adresse im Prozess kennt.
+        \item Bei Linux eine im Kernel bereitgestellte Funktionalität
+        \item In \codeline{sysctl} die Option \codeline{{kernel.randomize\_va\_space=0}} bzw. \codeline{=1}
+        \item ASLR standardmäßig an
+    \end{itemize}
+    
+    Bei GCC zum Kompilieren die Flags \codeline{gcc -fPIE -pie}
+    setzen um das Compiler-Pendant zu ASLR zu verwenden.\\
+    Das schwache Beispiel verwendet PIE explizit \underline{nicht}:\\ \codeline{gcc -fno-stack-protector -z execstack \underline{-no-pie}}
+    %Die Speicheradressen von eingebundenen Bibliotheken und Methoden werden
+    %zufällig gewählt, sodass wichtige Komponenten, wie beispielsweise die
+    %Prüfung einer Lizenz, nicht immer am gleichen Offset liegen. Denn ansonsten könnte ein Angreifer
+    %mit dem Wissen über die Speicheradresse des Programms die Speicheradresse beliebiger
+    %Komponenten zuverlässig errechnen und erreichen.
+       
+    
+    \end{frame}
+
+
+%Nach dem gleichen Konzept ist es dann einem Angreifer nicht ohne weiteres möglich, die
+%Speicheradressen der Komponenten eines Programms zu kennen, da diese abhängig
+%von der (nun zufälligen) Speicheradresse des Programms sind. Kombiniert man nun beide Lösungen,
+%so sind nun alle Adressen zufällig und nicht voneinander abhängig.
+
+
+
+
 
 
 \begin{frame}{Gegenmaßnahmen}{Manuelles Buffer-Overflow-Blocken}    
