@@ -1,4 +1,4 @@
-name: Build abschlussbericht with LaTeX Beamer
+name: Build abschlussbericht with LaTeX
 on: 
   push:
     branches: [ master ]
