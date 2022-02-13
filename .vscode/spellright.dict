@@ -39,3 +39,11 @@ hersteller
 ausarbeitung
 kraemer
 moeglich
+gcc
+fno
+execstack
+sudo
+socat
+nodelay
+reuseaddr
+stdbuf
