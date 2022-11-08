@@ -20,7 +20,7 @@ jobs:
       - name: Change filename
         run: cp abschlussbericht/main.pdf abschlussbericht.pdf
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'AbschlussBericht'
           path: 'abschlussbericht.pdf'
