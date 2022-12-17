@@ -1,15 +1,15 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'main.blg'
-[885] biber-MSWIN64:340> INFO - === 
-[1247] Biber.pm:415> INFO - Reading 'main.bcf'
-[1550] Biber.pm:952> INFO - Found 23 citekeys in bib section 0
-[1667] Biber.pm:4340> INFO - Processing section 0
-[1845] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[2096] bibtex.pm:1689> INFO - LaTeX decoding ...
-[2284] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliography.bib'
-[2867] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2868] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2905] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[2905] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[3112] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[3208] bbl.pm:757> INFO - Output to main.bbl
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'main.blg'
+[59] biber-darwin:340> INFO - === Sat Dec 17, 2022, 21:34:02
+[70] Biber.pm:418> INFO - Reading 'main.bcf'
+[156] Biber.pm:978> INFO - Found 23 citekeys in bib section 0
+[168] Biber.pm:4401> INFO - Processing section 0
+[176] Biber.pm:4592> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[177] bibtex.pm:1713> INFO - LaTeX decoding ...
+[191] bibtex.pm:1518> INFO - Found BibTeX data source 'bibliography.bib'
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[269] Biber.pm:4221> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[269] Biber.pm:4227> INFO - No sort tailoring available for locale 'de-DE'
+[282] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[288] bbl.pm:757> INFO - Output to main.bbl
